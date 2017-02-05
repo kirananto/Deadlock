@@ -10,6 +10,9 @@
 
 <body>
 
+<a href="/leadersboard.php">Leadsboard</a>
+
+
 
 
 

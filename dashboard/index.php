@@ -1,7 +1,14 @@
 <?php
+session_start();
+if(!isset($_SESSION['userData']))
+{
+header('Location:/');
+exit;
+}
 include '../common/header.php';
 include '../common/con.php';
-session_start();
+
+
 $hash="";
 
 $userdata=$_SESSION['userData'];
