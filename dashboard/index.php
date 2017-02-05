@@ -1,18 +1,7 @@
 <?php
-session_start();
-if(!isset($_SESSION['userData']))
-{
-header('Location:/');
-exit;
-}
-include '../common/header.php';
+include '../common/auth.php';
 include '../common/con.php';
 
-
-$hash="";
-
-$userdata=$_SESSION['userData'];
-$email=$userdata['email'];
 if(!isset($userdata['isadmin']))
 {
 	$res=fetchquery("SELECT * from admins where email='$email';");
@@ -27,6 +16,21 @@ if(!isset($userdata['isadmin']))
 
 	}
 }
+
+if($_SESSION['userData']['isadmin'])
+{
+include '../common/adminheader.php';
+
+}else{
+include '../common/header.php';
+}
+
+
+$hash="";
+
+$userdata=$_SESSION['userData'];
+$email=$userdata['email'];
+
 $userid=$userdata['id'];
 $res=fetchquery("SELECT * from leadersboard where id=$userid;");
 if($res!=null)
@@ -81,14 +85,25 @@ echo 'error:leadersboard access';
 
 
 ?>
+<script>
 
+function sbmt_answer()
+{
+var txt=$('#anstxt').val();
+$.post("check.php",{"ans":txt},function(data){
+alert(data);
+});
+
+
+}
+</script>
 
 <img src="img.php?img=<?php echo $hash; ?>"/>
 
 
 
 
-<input type="text"></input>
+<input type="text" id="anstxt"></input>
 <input type="button" onclick="sbmt_answer()";></input>
 
 
