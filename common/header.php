@@ -10,7 +10,7 @@
 
 <body>
 
-<a href="/leadersboard.php">Leadsboard</a>
+<a href="leadersboard.php">Leadsboard</a>
 
 
 

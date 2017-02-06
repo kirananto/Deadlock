@@ -4,6 +4,7 @@ include '../common/con.php';
 
 if(!isset($userdata['isadmin']))
 {
+$email=$_SESSION['userData']['email'];
 	$res=fetchquery("SELECT * from admins where email='$email';");
 	if($res->num_rows==1)
 	{
