@@ -6,6 +6,19 @@ include 'common/con.php';
 $res=fetchquery("SELECT * from leadersboard order by lvlno asc;");
 ?>
 
+<?php
+require_once 'fbConfig.php';
+require_once 'User.php';
+ $fbUser = $_SESSION['fbUser'];
+ if(!$fbUser){
+  $fbUser = NULL;
+  $loginURL = $facebook->getLoginUrl(array('redirect_uri'=>$redirectURL,'scope'=>$fbPermissions));
+  $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="'.$loginURL.'">LOGIN</a>'; 
+}else{
+$logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.php">LOG OUT</a>'; 
+$play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -14,8 +27,8 @@ $res=fetchquery("SELECT * from leadersboard order by lvlno asc;");
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="razorSharp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="assets/images/untitled-130x128.jpg" type="image/x-icon">
-  <meta name="description" content="Web Site Maker Description">
+  <link rel="shortcut icon" href="assets/images/untitled-130x128.png" type="image/x-icon">
+  <meta name="description" content="LeadersBoard">
   <title>DeadLock - Leaderboard</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
@@ -41,7 +54,7 @@ $res=fetchquery("SELECT * from leadersboard order by lvlno asc;");
                 <div class="mbr-table-cell">
 
                     <div class="navbar-brand">
-                        <a href="index.php" class="navbar-logo"><img src="assets/images/untitled-130x128.jpg" alt="Deadlock"></a>
+                        <a href="index.php" class="navbar-logo"><img src="assets/images/untitled-130x128.png" alt="Deadlock"></a>
                         <a class="navbar-caption" href="index.php">DEADLOCK</a>
                     </div>
 
@@ -52,7 +65,7 @@ $res=fetchquery("SELECT * from leadersboard order by lvlno asc;");
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item dropdown"><a class="nav-link link" href="/dashboard/index.php" aria-expanded="false" target="_blank">PLAY</a></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item"><?php echo $play; ?></li><li class="nav-item nav-btn"><?php echo $logintop; ?></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>

@@ -95,7 +95,7 @@ echo 'error:leadersboard access';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="razorSharp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="/assets/images/untitled-130x128.jpg" type="image/x-icon">
+  <link rel="shortcut icon" href="/assets/images/untitled-130x128.png" type="image/x-icon">
   <meta name="description" content="Web Site Creator Description">
   <title>Overclock your brain</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
@@ -122,7 +122,7 @@ echo 'error:leadersboard access';
                 <div class="mbr-table-cell">
 
                     <div class="navbar-brand">
-                        <a href="index.php" class="navbar-logo"><img src="/assets/images/untitled-130x128.jpg" alt="Deadlock"></a>
+                        <a href="index.php" class="navbar-logo"><img src="/assets/images/untitled-130x128.png" alt="Deadlock"></a>
                         <a class="navbar-caption" href="index.php">DEADLOCK</a>
                     </div>
 

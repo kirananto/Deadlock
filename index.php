@@ -66,17 +66,29 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
   }
   }
 }
+$_SESSION['fbUser'] = $fbUser;
 ?>
 
 <head>
-  <meta charset="UTF-8">
+ <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="razorSharp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="assets/images/untitled-130x128.jpg" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/untitled-130x128.png" type="image/x-icon">
   <meta name="description" content="">
-  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+   <meta name=msapplication-tap-highlight content=no>
+    <link rel=manifest href=manifest.json>
+    <meta name=mobile-web-app-capable content=yes>
+    <meta name=application-name content="Deadlock">
+    <link rel=icon sizes=192x192 href=assets/images/untitled-130x128.png>
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=#7e9b9f>
+     <meta name=theme-color content=#7e9b9f>
+    <meta name=apple-mobile-web-app-title content="Deadlock">
+    <link rel=apple-touch-icon href=assets/images/untitled-130x128.png>
+    <meta name=msapplication-TileImage content=assets/images/untitled-130x128.png>
+    <meta name=msapplication-TileColor content=#7e9b9f>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
   <link rel="stylesheet" href="assets/bootstrap-material-design-font/css/material.css">
@@ -87,8 +99,19 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/additional/css/mbr-additional.css" type="text/css">
   
-  
-  
+  <script type="text/javascript">
+     if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+  </script>
 </head>
 <body>
 <section id="menu-0">
@@ -100,7 +123,7 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
                 <div class="mbr-table-cell">
 
                     <div class="navbar-brand">
-                        <a href="index.php" class="navbar-logo"><img src="assets/images/untitled-130x128.jpg" alt="Deadlock"></a>
+                        <a href="index.php" class="navbar-logo"><img src="assets/images/untitled-130x128.png" alt="Deadlock"></a>
                         <a class="navbar-caption" href="index.php">DEADLOCK</a>
                     </div>
 
@@ -111,7 +134,7 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leaderboard.php" aria-expanded="false">LEADERBOARD</a><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">LOGOUT</a></li></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item nav-btn"><?php echo $logintop; ?></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item nav-btn"><?php echo $logintop; ?></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
