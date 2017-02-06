@@ -55,10 +55,10 @@ $nextlevel=$nextlevelrow['lvlno'];
 fetchquery("UPDATE  leadersboard SET lvlno='$nextlevel' where id='$id';");
 	
 	}
-	echo "correct";
+	echo "success";
 	}
 	else{
-	echo "incorrect";
+	echo "error";
 	}
 	
 	}

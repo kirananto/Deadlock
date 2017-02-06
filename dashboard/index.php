@@ -1,5 +1,3 @@
-
-
 <?php
 include '../common/auth.php';
 include '../common/con.php';
@@ -105,6 +103,8 @@ echo 'error:leadersboard access';
   <link rel="stylesheet" href="/assets/tether/tether.min.css">
   <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/dropdown/css/style.css">
+  <script src="/assets/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/dist/sweetalert.css">
   <link rel="stylesheet" href="/assets/animate.css/animate.min.css">
   <link rel="stylesheet" href="/assets/theme/css/style.css">
   <link rel="stylesheet" href="/assets/additional/css/mbr-additional.css" type="text/css">
@@ -173,7 +173,7 @@ echo 'error:leadersboard access';
 
 
 <input type="text" id="anstxt"></input>
-<input type="button" onclick="sbmt_answer();" value="Crack IT..."></input></div>
+<button type="button" onclick = "sbmt_answer();"class="btn btn-raised ripple-effect btn-primary btn-lg"> Submit Answer</button></div>
         </div>
     </div>
 
@@ -192,11 +192,20 @@ function sbmt_answer()
 {
 var txt=$('#anstxt').val();
 $.post("check.php",{"ans":txt},function(data){
-alert(data);
+  alert1(data);
 });
 
 
 }
+var alert1 = function(data1) {
+   
+        if(data1 == 'success') {
+            swal("Good job!", "You've got the Right Answer", "success")
+        } else {
+            sweetAlert("Sorry...", "Wrong Answer.!", "error");
+        }
+    }
+
 </script>
 
   <script src="/assets/web/assets/jquery/jquery.min.js"></script>
