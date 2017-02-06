@@ -1,3 +1,12 @@
+<?php
+
+include 'common/con.php';
+
+
+$res=fetchquery("SELECT * from leadersboard order by lvlno asc;");
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,8 +15,8 @@
   <meta name="generator" content="razorSharp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="assets/images/untitled-130x128.jpg" type="image/x-icon">
-  <meta name="description" content="Web Site Creator Description">
-  <title>Overclock your brain</title>
+  <meta name="description" content="Web Site Maker Description">
+  <title>DeadLock - Leaderboard</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
@@ -23,7 +32,7 @@
   
 </head>
 <body>
-<section id="menu-c">
+<section id="menu-5">
 
     <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
         <div class="container">
@@ -43,7 +52,7 @@
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leaderboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="index.php">LOGIN</a></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item dropdown"><a class="nav-link link" href="/dashboard/index.php" aria-expanded="false" target="_blank">PLAY</a></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
@@ -56,15 +65,15 @@
 
 </section>
 
-<section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-e" style="background-image: url(assets/images/desert.jpg); padding-top: 120px; padding-bottom: 120px;">
+<section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-8" style="background-image: url(assets/images/desert.jpg); padding-top: 120px; padding-bottom: 120px;">
 
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(34, 34, 34);">
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
-                <h3 class="mbr-section-title display-2">Overclock your Brain</h3>
-                <div class="lead"><p>Try ,.. &nbsp; Answer if you can..!!!</p></div>
+                <h3 class="mbr-section-title display-2">LEADERBOARD</h3>
+                <div class="lead"><p>Don't rest until you climb to the top..!!.</p></div>
                 
             </div>
         </div>
@@ -72,17 +81,68 @@
 
 </section>
 
-<section class="mbr-section article mbr-section__container" id="content1-f" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+<section class="mbr-section article mbr-section__container" id="content1-b" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 lead"><p>// Here we'll display our questions...&nbsp;</p></div>
+            <div class="col-xs-12 lead">
+           
+           
+           
+           
+      
+           
+           
+           
+<table>
+
+<tr><th>Rank</th><th>Name</th><th>College</th><th>Level</th></tr>
+<?php
+if($res!=null)
+{
+
+for($i=0;$i<$res->num_rows;$i++)
+{
+$r=$res->fetch_assoc();
+
+echo '<tr><td>'.($i+1).'</td><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.$r['lvlno'].'</td></tr>';
+
+}
+
+}
+
+?>
+
+</table>
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+            
+            </div>
         </div>
     </div>
 
 </section>
 
-<footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-d" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
+<footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-6" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
     <div class="container">
         <p class="text-xs-center">Copyright (c) 2017 Deadlock.</p>

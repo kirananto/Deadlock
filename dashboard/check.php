@@ -2,6 +2,13 @@
 
 include '../common/con.php';
 include '../common/auth.php';
+$userdata=$_SESSION['userData'];
+if($userdata['activated']==0)
+
+{
+header("Location:/");
+exit;
+}
 if(isset($_POST))
 {
 
@@ -23,7 +30,8 @@ if($res!=null)
 	$lvl=$row["lvlno"];
 	$stmt=$mysqli->prepare("INSERT into tried values(?,?,?,?,?);");
 	$nowdate=date("Y-m-d H:i:s");
-	$stmt->bind_param("isiss",$id,$ansoriginal,$lvl,$nowdate,get_ip()  );
+	$ip=get_ip();
+	$stmt->bind_param("isiss",$id,$ansoriginal,$lvl,$nowdate,$ip  );
 	$stmt->execute();
 	$stmt->close();
 	

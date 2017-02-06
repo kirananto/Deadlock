@@ -1,3 +1,34 @@
+<?php
+session_start();
+include 'common/con.php';
+
+if(isset($_GET['e']))
+{
+$i=$_GET['e'];
+
+if($i=='1')
+{
+$errmsg="Please Fill the blanks Fields";
+}
+else{
+$errmsg="Invalid Mobile NO";
+
+
+}
+}
+if(!isset($_SESSION['userData'])||$_SESSION['userData']['activated']==1)
+{header("Location:/");}
+
+$u=$_SESSION['userData'];
+$email=$u['email'];
+$fname=$u['first_name'];
+$lname=$u['last_name'];
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,8 +94,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
-                <h3 class="mbr-section-title display-2">LEADERBOARD</h3>
-                <div class="lead"><p>Don't rest until you climb to the top..!!.</p></div>
+                <h3 class="mbr-section-title display-2">COMPLETE REGISTRATION</h3>
                 
             </div>
         </div>
@@ -76,7 +106,56 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 lead">//TODO &nbsp; &nbsp; here we'll display the table for the leaderboard</div>
+            <div class="col-xs-12 lead">
+           
+           
+           
+           
+      
+           
+           
+           
+<form action="complete.php" method="POST">
+
+<p><?php echo $errmsg; ?></p>
+First Name:<input type="text" name="fname" value="<?php echo $fname;?>"></input>
+
+
+Last Name:<input type="text" name="lname" value="<?php echo $lname;?>"></input>
+
+Email:<input type="text" name="email" value="<?php echo $email;?>" disabled ></input>
+
+Mobile No:<input type="text" name="mobno"></input>
+
+College: <input type="text" name="college"></input>
+
+<input type="submit" name="submit"></input>
+
+
+</form>
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+            
+            </div>
         </div>
     </div>
 

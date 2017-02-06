@@ -1,4 +1,5 @@
 <?php
+
 class User {
 	private $dbHost     = "localhost";
     private $dbUsername = "root";

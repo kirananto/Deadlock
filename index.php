@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+
 <?php
 //Include FB config file && User class
 require_once 'fbConfig.php';
@@ -31,12 +30,12 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
     'link'      => $fbUserProfile['link']
   );
   $userData = $user->checkUser($fbUserData);
-  
-  //Put user data into session
+
+    //Put user data into session
   $_SESSION['userData'] = $userData;
-  
+  /*
   //Render facebook profile data
-  if(!empty($userData)){
+  
     $output = '<h1>Facebook Profile Details </h1>';
     $output .= '<img src="'.$userData['picture'].'">';
         $output .= '<br/>Facebook ID : ' . $userData['oauth_uid'];
@@ -47,11 +46,28 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
         $output .= '<br/>Logged in with : Facebook';
     $output .= '<br/><a href="'.$userData['link'].'" target="_blank">Click to Visit Facebook Page</a>';
         $output .= '<br/>Logout from <a href="logout.php">Facebook</a>'; 
-  }else{
+  }
+  
+  */
+  if(empty($userData)){
     $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
+    
+  }
+  else{
+  
+  if($userData['activated']==0){
+  
+  header("Location:enterdetails.php?");
+  }
+  else{
+  
+  
+  header("Location:dashboard/index.php");
+  }
   }
 }
 ?>
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -95,7 +111,7 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leaderboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item nav-btn"><?php echo $logintop; ?></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leaderboard.php" aria-expanded="false">LEADERBOARD</a><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">LOGOUT</a></li></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item nav-btn"><?php echo $logintop; ?></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
