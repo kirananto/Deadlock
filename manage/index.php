@@ -1,3 +1,4 @@
+
 <?php
 
 include '../common/adminpanel.php';
@@ -36,3 +37,4 @@ echo '<tr><td>'.$row['lvlno'].'</td><td>'.($row['enabled']!=0?"Yes":"No").'</td>
 
 include '../common/foot.php';
 ?>
+

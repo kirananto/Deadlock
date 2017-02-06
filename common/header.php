@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php ini_set('display_errors', 'On');?>
 
 <html>
@@ -11,6 +12,7 @@
 <body>
 
 <a href="leadersboard.php">Leadsboard</a>
+
 
 
 
