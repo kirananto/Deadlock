@@ -11,6 +11,7 @@ if(!$fbUser){
   $output = '<div class="mbr-section-btn"><a class="btn btn-lg btn-info" href="'.$loginURL.'" >LOGIN WITH FACEBOOK</a>';  
   $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="'.$loginURL.'">LOGIN</a>'; 
 }else{
+$logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.php">LOG OUT</a>'; 
   //Get user profile data from facebook
   $fbUserProfile = $facebook->api('/me?fields=id,first_name,last_name,email,link,gender,locale,picture');
   
