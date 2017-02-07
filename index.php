@@ -75,7 +75,8 @@ $_SESSION['fbUser'] = $fbUser;
   <meta name="generator" content="razorSharp">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="assets/images/untitled-130x128.png" type="image/x-icon">
-  <meta name="description" content="">
+  <meta name="description" content="Home Page">
+  <title>Deadlock</title>
    <meta name=msapplication-tap-highlight content=no>
     <link rel=manifest href=manifest.json>
     <meta name=mobile-web-app-capable content=yes>
