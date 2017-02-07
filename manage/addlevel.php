@@ -81,10 +81,11 @@ include '../common/adminpanel.php'; ?>
       </div>
 <div class = "form-group">
 <label for="fileToUpload">Level Image :</label>
-  <input type="file" id="fileToUpload" name="fileToUpload" class="form-control">
+  <input type="file" id="fileToUpload" name="fileToUpload" class="form-control custom-file-input">
       </div>
 
- <div class = "form-group"><button type="button" name= "f" onclick = "" class="btn btn-raised ripple-effect btn-primary btn-lg"> Submit</button></div>
+ <div class="form-group">
+ <button type="button" name= "f" onclick = "" class="btn btn-raised ripple-effect btn-primary btn-lg"> Submit</button></div>
 
 
 
@@ -104,7 +105,8 @@ include '../common/adminpanel.php'; ?>
 
   <script src="/assets/web/assets/jquery/jquery.min.js"></script>
   <script src="/assets/tether/tether.min.js"></script>
-  <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.js"></script>
   <script src="/assets/smooth-scroll/SmoothScroll.js"></script>
   <script src="/assets/dropdown/js/script.min.js"></script>
   <script src="/assets/touchSwipe/jquery.touchSwipe.min.js"></script>
