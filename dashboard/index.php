@@ -133,7 +133,7 @@ echo 'error:leadersboard access';
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="/leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><a class="nav-link link" href="/logout.php" aria-expanded="false">LOG OUT</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><?php if($_SESSION['userData']['isadmin']){?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="/manage/index.php">GO TO ADMIN PANEL</a></li><?php }?></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="/leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><a class="nav-link link" href="/logout.php" aria-expanded="false">LOG OUT</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><?php if($_SESSION['userData']['isadmin']){?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="/manage/index.php">GO TO ADMIN PANEL</a></li><?php } else { ?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="https://www.facebook.com/D4Deadlock">CHECK CLUES</a></li><?php } ?></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
@@ -162,23 +162,39 @@ echo 'error:leadersboard access';
 
 </section>
 
-<section class="mbr-section article mbr-section__container" id="content1-f" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+<section class="mbr-section" id="msg-box5-h" style="background-color: rgb(255, 255, 255); padding-top: 120px; padding-bottom: 120px;">
 
+    
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 lead">
-<img src="img.php?img=<?php echo $hash; ?>"/>
+            <div class="mbr-table-md-up">
+
+              <div class="mbr-table-cell mbr-right-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 70%;">
+                  <div class="mbr-figure"><img src="img.php?img=<?php echo $hash; ?>"></div>
+              </div>
+
+              
 
 
+              <div class="mbr-table-cell col-md-5 text-xs-center text-md-left content-size">
+                  <h3 class="mbr-section-title display-2">THINK FOR AN ANSWER</h3>
+                  <div class="lead">
+<p>
+                  <input type="text" id="anstxt"></input></p>
+
+                  </div>
+
+                  <div><button type="button" onclick = "sbmt_answer();"class="btn btn-raised ripple-effect btn-primary btn-lg"> Submit Answer</button></div>
+              </div>
 
 
-<input type="text" id="anstxt"></input>
-<button type="button" onclick = "sbmt_answer();"class="btn btn-raised ripple-effect btn-primary btn-lg"> Submit Answer</button></div>
+              
+
+            </div>
         </div>
     </div>
 
 </section>
-
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-d" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
     <div class="container">
