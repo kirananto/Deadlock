@@ -120,4 +120,4 @@ echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td>'.($row['enabled']!=0?"Yes
 include '../common/foot.php';
    ?>
   </body>
-</html>s
+</html>
