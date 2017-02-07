@@ -170,7 +170,7 @@ echo 'error:leadersboard access';
             <div class="mbr-table-md-up">
 
               <div class="mbr-table-cell mbr-right-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 70%;">
-                  <div class="mbr-figure"><img src="img.php?img=<?php echo $hash; ?>"></div>
+                  <div class="mbr-figure"><img src="img.php?img=<?php echo $hash; ?>" alt=" Image appears here "></div>
               </div>
 
               
@@ -180,7 +180,7 @@ echo 'error:leadersboard access';
                   <h3 class="mbr-section-title display-2">THINK FOR AN ANSWER</h3>
                   <div class="lead">
 <p>
-                  <input type="text" id="anstxt"></input></p>
+                  <input class ="form-control" type="text" id="anstxt"></input></p>
 
                   </div>
 
