@@ -1,11 +1,7 @@
 <?php
-
 include 'common/con.php';
-
-
-$res=fetchquery("SELECT * from leadersboard order by lvlno asc;");
+$res=fetchquery("SELECT * from leadersboard order by lvlno desc ;");
 ?>
-
 <?php
 require_once 'fbConfig.php';
 require_once 'User.php';
@@ -19,7 +15,6 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
 $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,9 +35,6 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
   <link rel="stylesheet" href="assets/animate.css/animate.min.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/additional/css/mbr-additional.css" type="text/css">
-  
-  
-  
 </head>
 <body>
 <section id="menu-5">
@@ -57,29 +49,21 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
                         <a href="index.php" class="navbar-logo"><img src="assets/images/untitled-130x128.png" alt="Deadlock"></a>
                         <a class="navbar-caption" href="index.php">DEADLOCK</a>
                     </div>
-
                 </div>
                 <div class="mbr-table-cell">
-
                     <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="hamburger-icon"></div>
                     </button>
-
                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item"><?php echo $play; ?></li><li class="nav-item nav-btn"><?php echo $logintop; ?></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
-
                 </div>
             </div>
-
         </div>
     </nav>
-
 </section>
-
 <section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-8" style="background-image: url(assets/images/desert.jpg); padding-top: 120px; padding-bottom: 120px;">
-
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(34, 34, 34);">
     </div>
     <div class="container">
@@ -87,29 +71,19 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
             <div class="col-md-8 col-md-offset-2 text-xs-center">
                 <h3 class="mbr-section-title display-2">LEADERBOARD</h3>
                 <div class="lead"><p>Don't rest until you climb to the top..!!.</p></div>
-                
-            </div>
+ </div>
         </div>
     </div>
+</section> 
+<section class="mbr-section article mbr-section__container" id="content1-b" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px; ">
 
-</section>
-
-<section class="mbr-section article mbr-section__container" id="content1-b" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
-
-    <div class="container">
+    <div class="container col-md-offset-1 col-xs-offset-1">
         <div class="row">
-            <div class="col-xs-12 lead">
-           
-           
-           
-           
-      
-           
-           
-           
-<table>
+            <div class="col-xs-12 col-md-12 ">
+     
+<table class="table table-hover">
 
-<tr><th>Rank</th><th>Name</th><th>College</th><th>Level</th></tr>
+<thead><tr><th>Rank</th><th>Name</th><th>College</th><th>Level</th></tr></thead><tbody>
 <?php
 if($res!=null)
 {
@@ -118,43 +92,21 @@ for($i=0;$i<$res->num_rows;$i++)
 {
 $r=$res->fetch_assoc();
 
-echo '<tr><td>'.($i+1).'</td><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.$r['lvlno'].'</td></tr>';
+echo '<tr><th scope = "row">'.($i+1).'</th><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.$r['lvlno'].'</td></tr>';
+if($i == 99) break;
 
 }
 
 }
 
 ?>
-
+</tbody>
 </table>
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-            
+       
             </div>
         </div>
     </div>
-
 </section>
-
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-6" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
     <div class="container">

@@ -118,19 +118,19 @@ $lname=$u['last_name'];
 <form action="complete.php" method="POST">
 
 <p><?php echo $errmsg; ?></p>
-First Name:<input type="text" name="fname" value="<?php echo $fname;?>"></input>
+<table padding=10101010101010101010px>
+<tr><td>First Name:</td><td><input type="text" name="fname" value="<?php echo $fname;?>"></input></td></tr>
 
+<tr><td>Last Name:</td><td><input type="text" name="lname" value="<?php echo $lname;?>"></input></td></tr>
 
-Last Name:<input type="text" name="lname" value="<?php echo $lname;?>"></input>
+<tr><td>Email:</td><td><input type="text" name="email" value="<?php echo $email;?>" disabled ></input></td></tr>
 
-Email:<input type="text" name="email" value="<?php echo $email;?>" disabled ></input>
+<tr><td>Mobile No:</td><td><input type="text" name="mobno"></input></td></tr>
 
-Mobile No:<input type="text" name="mobno"></input>
+<tr><td>College:</td><td><input type="text" name="college"></input></td></tr>
 
-College: <input type="text" name="college"></input>
-
-<input type="submit" name="submit"></input>
-
+<tr><td></td><td><input type="submit" name="submit"></input></td></tr>
+</table>
 
 </form>
            
