@@ -176,7 +176,7 @@ echo 'error:leadersboard access';
               
 
 
-              <div class="mbr-table-cell col-md-5 text-xs-center text-md-left content-size">
+              <div class="mbr-table-cell col-md-5 text-xs-center text-md-left content-size" id= "closestdiv">
                   <h3 class="mbr-section-title display-2">THINK FOR AN ANSWER</h3>
                   <div class="lead">
 <p>

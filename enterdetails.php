@@ -118,42 +118,21 @@ $lname=$u['last_name'];
 <form action="complete.php" method="POST">
 
 <p><?php echo $errmsg; ?></p>
-<table padding=10101010101010101010px>
-<tr><td>First Name:</td><td><input type="text" name="fname" value="<?php echo $fname;?>"></input></td></tr>
+<table class="table table-hover" padding=10101010101010101010px>
+<tr><td>First Name:</td><td><input type="text" class="form-control" name="fname" value="<?php echo $fname;?>"></input></td></tr>
 
-<tr><td>Last Name:</td><td><input type="text" name="lname" value="<?php echo $lname;?>"></input></td></tr>
+<tr><td>Last Name:</td><td><input type="text"  class="form-control" name="lname" value="<?php echo $lname;?>"></input></td></tr>
 
-<tr><td>Email:</td><td><input type="text" name="email" value="<?php echo $email;?>" disabled ></input></td></tr>
+<tr><td>Email:</td><td><input type="text" class="form-control" name="email" value="<?php echo $email;?>" disabled ></input></td></tr>
 
-<tr><td>Mobile No:</td><td><input type="text" name="mobno"></input></td></tr>
+<tr><td>Mobile No:</td><td><input type="text" class="form-control" name="mobno"></input></td></tr>
 
-<tr><td>College:</td><td><input type="text" name="college"></input></td></tr>
+<tr><td>College:</td><td><input type="text"  class="form-control" name="college"></input></td></tr>
 
-<tr><td></td><td><input type="submit" name="submit"></input></td></tr>
+<tr><td></td><td><input type="submit" name="submit" class="col-xs-offset-2 btn btn-raised ripple-effect btn-primary btn-lg"></input></td></tr>
 </table>
 
 </form>
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
             
             </div>
         </div>
