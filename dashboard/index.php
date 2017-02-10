@@ -170,7 +170,7 @@ echo 'error:leadersboard access';
             <div class="mbr-table-md-up">
 
               <div class="mbr-table-cell mbr-right-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 70%;">
-                  <div class="mbr-figure"><img src="img.php?img=<?php echo $hash; ?>" alt=" Image appears here "></div>
+                  <div class="mbr-figure"><img src="img.php?img=<?php echo $hash; ?>" class="img-rounded" alt=" Image appears here "></div>
               </div>
 
               

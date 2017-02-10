@@ -149,6 +149,11 @@ h6,
   background-color: #597478;
   border-color: #597478;
 }
+
+.img-rounded {
+  border-radius: 6px;
+}
+
 .btn-info.disabled,
 .btn-info:disabled {
   color: #ffffff !important;
