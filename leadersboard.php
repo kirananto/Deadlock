@@ -47,7 +47,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
 
                     <div class="navbar-brand">
                         <a href="index.php" class="navbar-logo"><img src="assets/images/untitled-130x128.png" alt="Deadlock"></a>
-                        <a class="navbar-caption" href="index.php">DEADLOCK</a>
+                        <a class="navbar-caption" href="index.php"><img class = " col-md-4 col-xs-4" src = "assets/images/logo.png" /></a>
                     </div>
                 </div>
                 <div class="mbr-table-cell">
