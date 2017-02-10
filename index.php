@@ -3,7 +3,6 @@
 //Include FB config file && User class
 require_once 'fbConfig.php';
 require_once 'User.php';
-
 if(!$fbUser){
   $fbUser = NULL;
   $loginURL = $facebook->getLoginUrl(array('redirect_uri'=>$redirectURL,'scope'=>$fbPermissions));
@@ -125,7 +124,7 @@ $_SESSION['fbUser'] = $fbUser;
 
                     <div class="navbar-brand">
                         <a href="index.php" class="navbar-logo"><img src="assets/images/untitled-130x128.png" alt="Deadlock"></a>
-                        <a class="navbar-caption" href="index.php">DEADLOCK</a>
+                        <a class="navbar-caption" href="index.php"><img class = " col-md-4 col-xs-4" src = "assets/images/logo.png" /></a>
                     </div>
 
                 </div>
@@ -158,8 +157,8 @@ $_SESSION['fbUser'] = $fbUser;
             <div class="row">
                 <div class="mbr-section col-md-10 col-md-offset-1 text-xs-center">
 
-                    <h1 class="mbr-section-title display-1">DEADLOCK</h1>
-                    <p class="mbr-section-lead lead">Overclock your brain<br>but never rest, unless you're at the top</p>
+                    <div class="mbr-section-title display-1"><img src = "assets/images/logo.png" width="400dp"/></div>
+                    <p class="mbr-section-lead lead">Overclock your brain<br>but never rest, unless you're at the top</p><br>
                     <div class="mbr-section-btn"><?php echo $output; ?> </div>
                 </div>
             </div>

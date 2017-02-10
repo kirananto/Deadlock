@@ -3,7 +3,7 @@
 class User {
 	private $dbHost     = "localhost";
     private $dbUsername = "root";
-    private $dbPassword = "deadlock";
+    private $dbPassword = "a3kcs17aek";
     private $dbName     = "deadlock";
 	private $userTbl    = 'users';
 	

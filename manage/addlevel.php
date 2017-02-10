@@ -80,7 +80,7 @@ include '../common/adminpanel.php'; ?>
       <input type="text" id="lvlno" class="form-control" placeholder="Level No:">
       </div>
 <div class = "form-group">
-<label for="fileToUpload">Level Image :</label>
+<label for="lvlfile">Level Image :</label>
   <input type="file" id="fileToUpload" name="fileToUpload" class="form-control">
       </div>
 

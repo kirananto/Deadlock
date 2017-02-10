@@ -2,7 +2,7 @@
 
 
 $username="root";
-$pwd="deadlock";
+$pwd="a3kcs17aek";
 $database="deadlock";
 $mysqli=new mysqli("localhost",$username,$pwd,$database);
 

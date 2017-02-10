@@ -1,5 +1,14 @@
 <?php
 include '../common/con.php';
+session_start();
+include '../common/auth.php';
+if($_SESSION['userData']['isadmin']==0)
+{
+
+header("Location:/?redir=na");
+exit;
+
+}
 $res=fetchquery("SELECT * from levels order by lvlno");
 
 ?>
@@ -80,7 +89,7 @@ if($res!=null)
 $i=0;
  while($row=$res->fetch_assoc())
 {
-echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td>'.($row['enabled']!=0?"Yes":"No").'</td></tr>';
+echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td><input id="leveltog" '.($row['enabled']!=0?"checked":"").' levelno="'.$row['lvlno'].'" data-toggle="toggle" type="checkbox"></td></tr>';
 
 
 }
@@ -101,7 +110,6 @@ echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td>'.($row['enabled']!=0?"Yes
     </div>
 </footer>
 
-
   <script src="/assets/web/assets/jquery/jquery.min.js"></script>
   <script src="/assets/tether/tether.min.js"></script>
   <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
@@ -113,6 +121,19 @@ echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td>'.($row['enabled']!=0?"Yes
   <script src="/assets/theme/js/script.js"></script>
   
   
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <script>
+
+$(document).ready( function () {
+$('#leveltog').change(function() {
+
+levelno=$(this).attr('levelno');
+alert(levelno);
+
+}});
+</script>
+
   <input name="animation" type="hidden">
    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
    <?php
