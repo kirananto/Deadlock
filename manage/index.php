@@ -103,7 +103,7 @@ echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td><input id="leveltog" '.($r
         </div>
     </div>
 </section>
-<footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-6" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
+<footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-d" style="background-image: url(/assets/images/footer.jpg); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
     <div class="container">
         <p class="text-xs-center">Copyright (c) 2017 Deadlock.</p>
