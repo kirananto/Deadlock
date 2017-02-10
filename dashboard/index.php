@@ -123,7 +123,7 @@ echo 'error:leadersboard access';
 
                     <div class="navbar-brand">
                         <a href="index.php" class="navbar-logo"><img src="/assets/images/untitled-130x128.png" alt="Deadlock"></a>
-                        <a class="navbar-caption" href="index.php"><img class = " col-md-4 col-xs-4" src = "assets/images/logo.png" /></a>
+                        <a class="navbar-caption" href="index.php"><img class = " col-md-4 col-xs-4" src = "/assets/images/logo.png" /></a>
                     </div>
 
                 </div>
@@ -133,7 +133,7 @@ echo 'error:leadersboard access';
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="/leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><a class="nav-link link" href="/logout.php" aria-expanded="false">LOG OUT</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><?php if($_SESSION['userData']['isadmin']){?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="/manage/index.php">GO TO ADMIN PANEL</a></li><?php } else { ?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="https://www.facebook.com/D4Deadlock">CHECK CLUES</a></li><?php } ?></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="/leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><a class="nav-link link" href="/logout.php" aria-expanded="false">LOGOUT</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><?php if($_SESSION['userData']['isadmin']){?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="/manage/index.php">GO TO ADMIN PANEL</a></li><?php } else { ?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="https://www.facebook.com/D4Deadlock">CHECK CLUES</a></li><?php } ?></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
