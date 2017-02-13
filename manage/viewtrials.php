@@ -100,6 +100,7 @@ $res=fetchquery("SELECT * from users");
 include '../common/adminpanel.php'; ?>
 <br><br>
 
+<h1> Select the user </h1>
 <table id="users" class="display  table table-hover"  >
 
 <tr><th>id</th><th>Name</th><th>College</th><th>Email</th><th>Mobile No</th></tr>
@@ -129,11 +130,10 @@ echo '</tr>';
 
 ?>
 
-
 </table>
 
-<h1> USER TRIES </h1>
-<table id="usertrys" class= "display table table-hover">
+<h1 id="heading23"> USER TRIES </h1>
+<table id="usertrys"class= "display table table-hover">
 
  <thead>
                                 <tr>
@@ -161,7 +161,8 @@ $(document).ready( function () {
 function view(id)
 {
 
-
+//document.getElementById("heading23").style.display = "none";
+//document.getElementById("usertrys").style.display = "none";
 $.post("viewusers.php",{"id":id},function(dataset){
 console.log(dataset);
 
