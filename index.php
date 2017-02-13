@@ -130,7 +130,7 @@ $_SESSION['fbUser'] = $fbUser;
 
                     <div class="navbar-brand">
                         <a href="index.php" class="navbar-logo"><img src="assets/images/untitled-130x128.png" alt="Deadlock"></a>
-                        <a class="navbar-caption" href="../index.php"><img class = " col-md-5 col-xs-5 col-sm-5" src = "../assets/images/logo.png" /></a>
+                        <a class="navbar-caption" href="../index.php"><img width="30%" src = "../assets/images/logo.png" /></a>
                     </div>
 
                 </div>
@@ -163,7 +163,7 @@ $_SESSION['fbUser'] = $fbUser;
             <div class="row">
                 <div class="mbr-section col-md-10 col-md-offset-1 text-xs-center">
 
-                    <div class="mbr-section-title display-1"><img src = "assets/images/logo.png" width="400dp"/></div><br>
+                    <div class="mbr-section-title display-1"><img src = "assets/images/logo.png" width="50%"/></div><br>
                     <p class="mbr-section-lead lead">Overclock your brain<br>but never rest, unless you're at the top</p><br>
                     <div class="mbr-section-btn"><?php echo $output; ?> </div>
                 </div>
