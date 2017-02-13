@@ -21,7 +21,18 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
   <link rel="shortcut icon" href="assets/images/untitled-130x128.png" type="image/x-icon">
   <meta name="description" content="Rules and Regulations">
   <title>Deadlock - Rules</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin"><meta name=msapplication-tap-highlight content=no>
+    <link rel=manifest href=manifest.json>
+    <meta name=mobile-web-app-capable content=yes>
+    <meta name=application-name content="Deadlock">
+    <link rel=icon sizes=192x192 href=assets/images/untitled-130x128.png>
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=#00964d>
+     <meta name=theme-color content=#00964d>
+    <meta name=apple-mobile-web-app-title content="Deadlock">
+    <link rel=apple-touch-icon href=assets/images/untitled-130x128.png>
+    <meta name=msapplication-TileImage content=assets/images/untitled-130x128.png>
+    <meta name=msapplication-TileColor content=#00964d>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
   <link rel="stylesheet" href="assets/bootstrap-material-design-font/css/material.css">
