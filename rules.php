@@ -37,10 +37,9 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
   
   
 </head>
-<body>
 <section id="menu-1">
 
-    <nav class="navbar navbar-dropdown navbar-fixed-top">
+    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
         <div class="container">
 
             <div class="mbr-table">
@@ -70,13 +69,24 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
     </nav>
 
 </section>
-
+<section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-8" style="background-image: url(assets/images/jumbotron.jpg); padding-top: 120px; padding-bottom: 100px;">
+    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(34, 34, 34);">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-xs-center">
+                <h3 class="mbr-section-title display-2">Rules and Regulations</h3>
+                <div class="lead"><p></p></div>
+ </div>
+        </div>
+    </div>
+</section> 
 <section class="engine"></section><section class="mbr-cards mbr-section mbr-section-nopadding mbr-after-navbar" id="features4-3" style="background-color: rgb(255, 255, 255);">
 
     
 
     <div class="mbr-cards-row row">
-        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 160px; padding-bottom: 80px;">
+        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 140px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
                     <div class="card-img iconbox"><a class="mbri-user mbr-iconfont mbr-iconfont-features4" style="color: black;"></a></div>
@@ -89,7 +99,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
                 </div>
             </div>
         </div>
-        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 160px; padding-bottom: 80px;">
+        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 140px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
                     <div class="card-img iconbox"><a class="etl-icon icon-edit mbr-iconfont mbr-iconfont-features4" style="color: black;"></a></div>
@@ -102,7 +112,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
                 </div>
           </div>
         </div>
-        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 160px; padding-bottom: 80px;">
+        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 140px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
                     <div class="card-img iconbox"><a class="mbri-like mbr-iconfont mbr-iconfont-features4" style="color: black;"></a></div>

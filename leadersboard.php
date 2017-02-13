@@ -63,7 +63,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
         </div>
     </nav>
 </section>
-<section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-8" style="background-image: url(assets/images/desert.jpg); padding-top: 120px; padding-bottom: 120px;">
+<section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-8" style="background-image: url(assets/images/jumbotron.jpg); padding-top: 120px; padding-bottom: 120px;">
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(34, 34, 34);">
     </div>
     <div class="container">

@@ -146,7 +146,7 @@ echo 'error:leadersboard access';
 
 </section>
 
-<section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-e" style="background-image: url(/assets/images/desert.jpg); padding-top: 120px; padding-bottom: 120px;">
+<section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-e" style="background-image: url(/assets/images/jumbotron.jpg); padding-top: 120px; padding-bottom: 120px;">
 
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(34, 34, 34);">
     </div>
@@ -154,7 +154,7 @@ echo 'error:leadersboard access';
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
                 <h3 class="mbr-section-title display-2">Overclock your Brain</h3>
-                <div class="lead"><p>Try ,.. &nbsp; Answer if you can..!!!</p></div>
+                <div class="lead"><p>Try... &nbsp; Answer if you can..!!!</p></div>
                 
             </div>
         </div>
@@ -184,7 +184,7 @@ echo 'error:leadersboard access';
 
                   </div>
 
-                  <div><button type="button" onclick = "sbmt_answer();"class="btn btn-raised ripple-effect btn-primary btn-lg"> Submit Answer</button></div>
+                  <div><button type="button" onclick = "sbmt_answer();"class="btn btn-lg btn-info"> Submit Answer</button></div>
               </div>
 
 

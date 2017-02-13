@@ -157,7 +157,7 @@ $_SESSION['fbUser'] = $fbUser;
             <div class="row">
                 <div class="mbr-section col-md-10 col-md-offset-1 text-xs-center">
 
-                    <div class="mbr-section-title display-1"><img src = "assets/images/logo.png" width="400dp"/></div>
+                    <div class="mbr-section-title display-1"><img src = "assets/images/logo.png" width="400dp"/></div><br>
                     <p class="mbr-section-lead lead">Overclock your brain<br>but never rest, unless you're at the top</p><br>
                     <div class="mbr-section-btn"><?php echo $output; ?> </div>
                 </div>
