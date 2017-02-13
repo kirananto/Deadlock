@@ -1,7 +1,12 @@
 <?php
 include '../common/con.php';
-if(isset($_POST))
+session_start();
+include '../common/auth.php';
+if($_SESSION['userData']['isadmin']==0)
 {
+
+header("Location:/?redir=na");
+exit;
 
 }
 ?>
@@ -55,7 +60,7 @@ if(isset($_POST))
                     <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="hamburger-icon"></div>
                     </button>
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="../rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="../leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item"><?php echo $play; ?></li><li class="nav-item nav-btn"><?php echo $logintop; ?></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="../rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="../leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><?php if($_SESSION['userData']['isadmin']){?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="/logout.php">LOG OUT</a></li><?php }?></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
@@ -71,7 +76,7 @@ if(isset($_POST))
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
                 <h3 class="mbr-section-title display-2">ADMIN PANEL</h3>
-                <div class="lead"><p>Manage the levels</p></div>
+                <div class="lead"><p>Add Levels</p></div>
  </div>
         </div>
     </div>
