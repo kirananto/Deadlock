@@ -27,13 +27,13 @@ $res=fetchquery("SELECT * from levels order by lvlno");
     <link rel=manifest href=manifest.json>
     <meta name=mobile-web-app-capable content=yes>
     <meta name=application-name content="Deadlock">
-    <link rel=icon sizes=192x192 href=assets/images/untitled-130x128.png>
+    <link rel=icon sizes=192x192 href=/assets/images/untitled-130x128.png>
     <meta name=apple-mobile-web-app-capable content=yes>
     <meta name=apple-mobile-web-app-status-bar-style content=#00964d>
      <meta name=theme-color content=#00964d>
     <meta name=apple-mobile-web-app-title content="Deadlock">
-    <link rel=apple-touch-icon href=assets/images/untitled-130x128.png>
-    <meta name=msapplication-TileImage content=assets/images/untitled-130x128.png>
+    <link rel=apple-touch-icon href=/assets/images/untitled-130x128.png>
+    <meta name=msapplication-TileImage content=/assets/images/untitled-130x128.png>
     <meta name=msapplication-TileColor content=#00964d>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
@@ -56,7 +56,7 @@ $res=fetchquery("SELECT * from levels order by lvlno");
 
                     <div class="navbar-brand">
                         <a href="../index.php" class="navbar-logo"><img src="../assets/images/untitled-130x128.png" alt="Deadlock"></a>
-                         <a class="navbar-caption" href="../index.php"><img class = " col-md-4 col-xs-4" src = "../assets/images/logo.png" /></a>
+                         <a class="navbar-caption" href="../index.php"><img class = " col-md-5 col-xs-5 col-sm-5" src = "../assets/images/logo.png" /></a>
                     </div>
                 </div>
                 <div class="mbr-table-cell">

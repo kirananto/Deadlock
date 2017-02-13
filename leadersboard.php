@@ -1,6 +1,6 @@
 <?php
 include 'common/con.php';
-$res=fetchquery("SELECT * from leadersboard order by lvlno desc ;");
+$res=fetchquery("SELECT * from leadersboard order by lvlno desc,date desc ;");
 ?>
 <?php
 require_once 'fbConfig.php';
