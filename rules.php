@@ -68,7 +68,8 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item"><?php echo $play; ?></li><li class="nav-item nav-btn"><?php echo $logintop; ?></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item"><?php if($_SESSION['userData']['isadmin']==0)
+{ echo $play; } ?></li><?php if($_SESSION['userData']['isadmin']){?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="/manage/index.php">GO TO ADMIN PANEL</a></li><?php }?><li class="nav-item nav-btn"><?php echo $logintop; ?></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
@@ -86,7 +87,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
-                <h3 class="mbr-section-title display-2">Rules and Regulations</h3>
+                <h3 class="mbr-section-title display-2">Rules</h3>
                 <div class="lead"><p></p></div>
  </div>
         </div>
@@ -165,7 +166,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
                 <div class="card cart-block">
                     <div class="card-img iconbox"><a  class="etl-icon icon-edit mbr-iconfont mbr-iconfont-features4" style="color: black;"></a></div>
                     <div class="card-block">
-                        <h4 class="card-title">While typing the answers, always use lowercase letters, without spaces.</h4>
+                        <h4 class="card-title">Get Clues from our FB page</h4>
                         <h5 class="card-subtitle"></h5>
                         <p class="card-text">Clues for the levels may be found in page source and on the Facebook page.</p>
                         

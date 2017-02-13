@@ -59,9 +59,15 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
   header("Location:enterdetails.php?");
   }
   else{
+    
+  /*  if($_SESSION['userData']['isadmin']==0){
   
   
-  header("Location:dashboard/index.php");
+  header("Location:manage/index.php");
+  exit;
+} else {*/
+   header("Location:dashboard/index.php");
+//}
   }
   }
 }
