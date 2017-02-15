@@ -107,8 +107,10 @@ echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td><input id="leveltog" '.($r
 }
 
 ?>
+</script>
 </tbody>
 </table>
+
        
             </div>
         </div>

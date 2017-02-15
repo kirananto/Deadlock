@@ -133,13 +133,15 @@ include '../common/adminpanel.php'; ?>
       }
       
       if(empty($errors)==true) {
-         move_uploaded_file($file_tmp,"levelsmade/".$file_name);
+         if(move_uploaded_file($_FILES['image']['tmp_name'],"levelsmade/".$_FILES['image']['name'])) {
          fetchquery("INSERT into levels values('$levelno','$file_name',0,'$lvlans');");
          echo '<script  type="text/javascript" >alert("Image Successfully Uploaded")</script>';
-      }else{
+      } else {
+        echo '<script  type="text/javascript" >alert("Couldnt upload")</script>';
+      }}else{
          print_r($errors);
       }
-   }
+ }
 ?>
        
             </div>
