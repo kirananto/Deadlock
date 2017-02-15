@@ -139,8 +139,8 @@ echo '</tr>';
                                 <tr>
                                     <th>LevelNo</th>
                                     <th>Answer</th>
-                                    <th>ip</th>
-                                    <th>Date </th>
+                                    <th>Date</th>
+                                    <th>IP address </th>
                                     
                                 </tr>
                             </thead>
