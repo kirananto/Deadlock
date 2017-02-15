@@ -94,9 +94,7 @@ $_SESSION['fbUser'] = $fbUser;
     <link rel=apple-touch-icon href=assets/images/untitled-130x128.png>
     <meta name=msapplication-TileImage content=assets/images/untitled-130x128.png>
     <meta name=msapplication-TileColor content=#00964d>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+
   <link rel="stylesheet" href="assets/bootstrap-material-design-font/css/material.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -105,19 +103,6 @@ $_SESSION['fbUser'] = $fbUser;
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/additional/css/mbr-additional.css" type="text/css">
   
-  <script type="text/javascript">
-     if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }).catch(function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-  </script>
 </head>
 <body>
 <section id="menu-0">
@@ -205,6 +190,19 @@ $_SESSION['fbUser'] = $fbUser;
   <script src="assets/jarallax/jarallax.js"></script>
   <script src="assets/theme/js/script.js"></script>
   
+  <script type="text/javascript">
+     if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+  </script>
   
   <input name="animation" type="hidden">
    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
