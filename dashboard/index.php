@@ -114,7 +114,6 @@ echo 'error:leadersboard access';
   <link rel="stylesheet" href="/assets/tether/tether.min.css">
   <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/dropdown/css/style.css">
-  <script src="/assets/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/dist/sweetalert.css">
   <link rel="stylesheet" href="/assets/animate.css/animate.min.css">
   <link rel="stylesheet" href="/assets/theme/css/style.css">
@@ -227,7 +226,7 @@ $.post("check.php",{"ans":txt},function(data){
 var alert1 = function(data1) {
    
         if(data1[data1.length-1] == 's') {
-            swal("Good job!", "You've got the Right Answer", "success")
+            swal("Good job!", "You've got the Right Answer", "success");
         } else {
             sweetAlert("Sorry...", "Wrong Answer.!", "error");
         }
@@ -245,6 +244,7 @@ var alert1 = function(data1) {
   <script src="/assets/jarallax/jarallax.js"></script>
   <script src="/assets/theme/js/script.js"></script>
   
+  <script src="/assets/dist/sweetalert.min.js"></script>
   
   <input name="animation" type="hidden">
    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>

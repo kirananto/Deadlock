@@ -40,6 +40,7 @@ exit;
   <link rel="stylesheet" href="/assets/dropdown/css/style.css">
   <link rel="stylesheet" href="/assets/animate.css/animate.min.css">
   <link rel="stylesheet" href="/assets/theme/css/style.css">
+
   <link rel="stylesheet" href="/assets/additional/css/mbr-additional.css" type="text/css">
 </head>
 <body>
@@ -90,25 +91,56 @@ exit;
 include '../common/adminpanel.php'; ?>
 <br><br>
 
-<form method="POST" action="addlevel.php">
+<form method="POST" action="addlevel.php" enctype="multipart/form-data">
 <div class = "form-group">
 <label for="lvlno">Level No:</label>
-      <input type="text" id="lvlno" class="form-control" placeholder="Level No:">
+      <input type="text" id="lvlno" name="lvlno" class="form-control" placeholder="Level No:">
       </div>
       <div class = "form-group">
       <label for="lvlans">Answer to the Level :</label>
- <input type="text" id="lvlans" class="form-control" placeholder="Answer to the Level :">
+ <input type="text" id="lvlans" name="lvlans" class="form-control" placeholder="Answer to the Level :">
       </div>
 <div class = "form-group">
 <label for="lvlfile">Level Image :</label>
-  <input type="file" id="fileToUpload" name="fileToUpload" class="form-control">
+  <input type="file" id="image" name="image" class="form-control">
       </div>
 <br>
- <div class = "form-group"><button type="button" name= "f" onclick = "" class="btn btn-raised col-xs-12  col-md-6 col-md-offset-3 ripple-effect btn-primary btn-lg"> Submit</button></div>
+ <div class = "form-group"><button type="submit" name= "sumbit" class="btn btn-raised col-xs-12  col-md-6 col-md-offset-3 ripple-effect btn-primary btn-lg"> Submit</button></div>
 
 
 
 </form>
+
+<?php
+   if(isset($_FILES['image'])){
+      $errors= array();
+      $levelno = $_POST["lvlno"];
+      $lvlans = $_POST["lvlans"];
+      $file_name = $_FILES['image']['name'];
+      $file_size = $_FILES['image']['size'];
+      $file_tmp = $_FILES['image']['tmp_name'];
+      $file_type = $_FILES['image']['type'];
+      $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+      
+      $expensions= array("jpeg","jpg","png");
+      
+      if(in_array($file_ext,$expensions)=== false){
+         $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+      }
+      
+      if($file_size > 2097152) {
+         $errors[]='File size must be excately 2 MB';
+      }
+      
+      if(empty($errors)==true) {
+         move_uploaded_file($file_tmp,"levelsmade/".$file_name);
+         fetchquery("INSERT into levels values('$levelno','$file_name',0,'$lvlans');");
+         echo '<script  type="text/javascript" >alert("Image Successfully Uploaded")</script>';
+      }else{
+         print_r($errors);
+      }
+   }
+?>
        
             </div>
         </div>
@@ -131,7 +163,6 @@ include '../common/adminpanel.php'; ?>
   <script src="/assets/viewportChecker/jquery.viewportchecker.js"></script>
   <script src="/assets/jarallax/jarallax.js"></script>
   <script src="/assets/theme/js/script.js"></script>
-  
   
   <input name="animation" type="hidden">
    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
