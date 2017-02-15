@@ -95,12 +95,16 @@ include '../common/adminpanel.php'; ?>
 <label for="lvlno">Level No:</label>
       <input type="text" id="lvlno" class="form-control" placeholder="Level No:">
       </div>
+      <div class = "form-group">
+      <label for="lvlans">Answer to the Level :</label>
+ <input type="text" id="lvlans" class="form-control" placeholder="Answer to the Level :">
+      </div>
 <div class = "form-group">
 <label for="lvlfile">Level Image :</label>
   <input type="file" id="fileToUpload" name="fileToUpload" class="form-control">
       </div>
-
- <div class = "form-group"><button type="button" name= "f" onclick = "" class="btn btn-raised ripple-effect btn-primary btn-lg"> Submit</button></div>
+<br>
+ <div class = "form-group"><button type="button" name= "f" onclick = "" class="btn btn-raised col-xs-12  col-md-6 col-md-offset-3 ripple-effect btn-primary btn-lg"> Submit</button></div>
 
 
 
