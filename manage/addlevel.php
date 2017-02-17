@@ -91,7 +91,7 @@ exit;
 include '../common/adminpanel.php'; ?>
 <br><br>
 
-<form method="POST" action="addlevel.php" enctype="multipart/form-data">
+<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
 <div class = "form-group">
 <label for="lvlno">Level No:</label>
       <input type="text" id="lvlno" name="lvlno" class="form-control" placeholder="Level No:">
@@ -101,8 +101,12 @@ include '../common/adminpanel.php'; ?>
  <input type="text" id="lvlans" name="lvlans" class="form-control" placeholder="Answer to the Level :">
       </div>
 <div class = "form-group">
-<label for="lvlfile">Level Image :</label>
+<label for="image">Level Image :</label>
   <input type="file" id="image" name="image" class="form-control">
+      </div>
+      <div class="form-group">
+      <label for="tog"> Enable Level :        &nbsp  &nbsp  &nbsp  &nbsp</label>
+      <input type="checkbox" class="col-md-2" id="tog" name="tog" checked data-toggle="toggle" value=1>
       </div>
 <br>
  <div class = "form-group"><button type="submit" name= "sumbit" class="btn btn-raised col-xs-12  col-md-6 col-md-offset-3 ripple-effect btn-primary btn-lg"> Submit</button></div>
@@ -116,34 +120,54 @@ include '../common/adminpanel.php'; ?>
       $errors= array();
       $levelno = $_POST["lvlno"];
       $lvlans = $_POST["lvlans"];
+      $isenabled = $_POST["tog"];
       $file_name = $_FILES['image']['name'];
       $file_size = $_FILES['image']['size'];
       $file_tmp = $_FILES['image']['tmp_name'];
       $file_type = $_FILES['image']['type'];
       $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
-      
       $expensions= array("jpeg","jpg","png");
-      
+      if($isenabled != 1){ $isenabled = 0;}
+      if($levelno != null && $lvlans != null && $file_name != null) {
+        $lvl = fetchquery("SELECT * from levels where lvlno = '$levelno'");
       if(in_array($file_ext,$expensions)=== false){
          $errors[]="extension not allowed, please choose a JPEG or PNG file.";
       }
       
       if($file_size > 2097152) {
-         $errors[]='File size must be excately 2 MB';
+         $errors[]='File size must be excatly 2 MB';
+      }
+
+      if($lvl != null) {
+        $errors[]=' Level already exists';
       }
       
       if(empty($errors)==true) {
-         if(move_uploaded_file($_FILES['image']['tmp_name'],"levelsmade/".$_FILES['image']['name'])) {
-         fetchquery("INSERT into levels values('$levelno','$file_name',0,'$lvlans');");
-         echo '<script  type="text/javascript" >alert("Image Successfully Uploaded")</script>';
+         if(move_uploaded_file($_FILES['image']['tmp_name'],"/var/www/html/levelsmade/".$_FILES['image']['name'])) {
+          
+         fetchquery("INSERT into levels values('$levelno','$file_name','$isenabled','$lvlans');");
+         phpAlert("Image Successfully Uploaded");
       } else {
-        echo '<script  type="text/javascript" >alert("Couldnt upload")</script>';
+        phpAlert("Couldn't Upload");
       }}else{
-         print_r($errors);
+        $i = 0;
+        $message= "";
+        do{
+        $message = $message.$errors[$i];
+        $i++;
+      } while($errors[$i]!= null);
+      phpAlert($message);
+      }} else 
+      {
+        phpAlert("Please Fill in all the Fields");
       }
  }
 ?>
-       
+   <?php
+function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
+?>    
             </div>
         </div>
     </div>
@@ -165,6 +189,9 @@ include '../common/adminpanel.php'; ?>
   <script src="/assets/viewportChecker/jquery.viewportchecker.js"></script>
   <script src="/assets/jarallax/jarallax.js"></script>
   <script src="/assets/theme/js/script.js"></script>
+
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   
   <input name="animation" type="hidden">
    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
