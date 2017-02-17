@@ -109,7 +109,7 @@ include '../common/adminpanel.php'; ?>
       <input type="checkbox" class="col-md-2" id="tog" name="tog" checked data-toggle="toggle" value=1>
       </div>
 <br>
- <div class = "form-group"><button type="submit" name= "sumbit" class="btn btn-raised col-xs-12  col-md-6 col-md-offset-3 ripple-effect btn-primary btn-lg"> Submit</button></div>
+ <div class = "form-group"><button type="submit" name= "submit" class="btn btn-raised col-xs-12  col-md-6 col-md-offset-3 ripple-effect btn-primary btn-lg"> Submit</button></div>
 
 
 
@@ -129,17 +129,20 @@ include '../common/adminpanel.php'; ?>
       $expensions= array("jpeg","jpg","png");
       if($isenabled != 1){ $isenabled = 0;}
       if($levelno != null && $lvlans != null && $file_name != null) {
-        $lvl = fetchquery("SELECT * from levels where lvlno = '$levelno'");
+        $lvl = fetchquery("SELECT * from levels where lvlno = $levelno");
       if(in_array($file_ext,$expensions)=== false){
          $errors[]="extension not allowed, please choose a JPEG or PNG file.";
       }
       
       if($file_size > 2097152) {
-         $errors[]='File size must be excatly 2 MB';
+         $errors[]='File size must be less than 2 MB';
       }
 
       if($lvl != null) {
+      if($lvl->num_rows!=0)
+      {
         $errors[]=' Level already exists';
+        }
       }
       
       if(empty($errors)==true) {

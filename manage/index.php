@@ -93,14 +93,14 @@ $res=fetchquery("SELECT * from levels order by lvlno");
 include '../common/adminpanel.php'; ?>
 <table class="table table-hover">
 
-<thead><tr><th>Level Number</th><th>Enabled</th></tr></thead><tbody>
+<thead><tr><th>Level Number</th><th>Answer</th><th>Enabled</th><th>Edit</th></tr></thead><tbody>
 <?php
 if($res!=null)
 {
 $i=0;
  while($row=$res->fetch_assoc())
 {
-echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td><input id="leveltog" '.($row['enabled']!=0?"checked":"").' levelno="'.$row['lvlno'].'" data-toggle="toggle" type="checkbox"></td></tr>';
+echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td>'.$row['answer'].'</td><td><input id="leveltog" '.($row['enabled']!=0?"checked":"").' levelno="'.$row['lvlno'].'" data-toggle="toggle" type="checkbox"></td><td><p onclick="editlevel(\''.$row['lvlno'].'\');">Edit</p></td></tr>';
 
 
 }
@@ -138,7 +138,12 @@ echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td><input id="leveltog" '.($r
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <script>
 
+function editlevel(i)
+{
+	alert(i);
+}
 $(document).ready( function () {
+
 $('#leveltog').change(function() {
 
 levelno=$(this).attr('levelno');
