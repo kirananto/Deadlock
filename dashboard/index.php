@@ -28,19 +28,30 @@ $email=$_SESSION['userData']['email'];
 
 
 $hash="";
-
+$rank="";
 
 $email=$userdata['email'];
 
 $userid=$userdata['id'];
-$res=fetchquery("SELECT * from leadersboard where id=$userid;");
+$res=fetchquery("SELECT lvlno from leadersboard where id=$userid;");
+$rankvar=fetchquery("SELECT count(*)+1 as rank from leadersboard where lvlno>(SELECT lvlno from leadersboard where id=$userid)");
+if($rankvar!=null)
+{
+
+	if($rankvar->num_rows==1)
+	{
+	
+	$row=$rankvar->fetch_assoc();
+	$rank=$row['rank'];
+	}
+}
 if($res!=null)
 {
 	if($res->num_rows==1)
 	{
 	$row=$res->fetch_assoc();
 	$lvl=$row['lvlno'];
-
+	
 	$res=fetchquery("SELECT * from levels where lvlno='$lvl';");
 	if($res!=null)
 	{
@@ -174,7 +185,7 @@ echo 'error:leadersboard access';
 
 <section class="mbr-section" id="msg-box5-h" style="background-color: rgb(255, 255, 255); padding-top: 120px; padding-bottom: 120px;">
 
-    
+    <div>Your  Rank:<?php echo $rank; ?></div>
     <div class="container">
         <div class="row">
             <div class="mbr-table-md-up">
@@ -227,8 +238,11 @@ var alert1 = function(data1) {
    
         if(data1[data1.length-1] == 's') {
             swal("Good job!", "You've got the Right Answer", "success");
+            location.reload();
+            
         } else {
             sweetAlert("Sorry...", "Wrong Answer.!", "error");
+            
         }
     }
 
