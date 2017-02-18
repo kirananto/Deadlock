@@ -43,6 +43,9 @@ $res=fetchquery("SELECT * from levels order by lvlno");
   <link rel="stylesheet" href="/assets/dropdown/css/style.css">
   <link rel="stylesheet" href="/assets/animate.css/animate.min.css">
   <link rel="stylesheet" href="/assets/theme/css/style.css">
+
+  
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/assets/additional/css/mbr-additional.css" type="text/css">
 </head>
 <body>
@@ -132,9 +135,6 @@ echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td>'.$row['answer'].'</td><td
   <script src="/assets/viewportChecker/jquery.viewportchecker.js"></script>
   <script src="/assets/jarallax/jarallax.js"></script>
   <script src="/assets/theme/js/script.js"></script>
-  
-  
-  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <script>
 
