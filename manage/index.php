@@ -100,7 +100,7 @@ if($res!=null)
 $i=0;
  while($row=$res->fetch_assoc())
 {
-echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td>'.$row['answer'].'</td><td><input id="leveltog" '.($row['enabled']!=0?"checked":"").' levelno="'.$row['lvlno'].'" data-toggle="toggle" type="checkbox"></td><td><p onclick="editlevel(\''.$row['lvlno'].'\');">Edit</p></td></tr>';
+echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td>'.$row['answer'].'</td><td><input id="leveltog" '.($row['enabled']!=0?"checked":"").' levelno="'.$row['lvlno'].'" data-toggle="toggle" type="checkbox"></td><td><button type="button" onclick ="editlevel(\''.$row['lvlno'].'\');" class="btn btn-lg btn-info">Edit</button></td></tr>';
 
 
 }

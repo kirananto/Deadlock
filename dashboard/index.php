@@ -183,9 +183,14 @@ echo 'error:leadersboard access';
 
 </section>
 
-<section class="mbr-section" id="msg-box5-h" style="background-color: rgb(255, 255, 255); padding-top: 120px; padding-bottom: 120px;">
+<section class="mbr-section" id="msg-box5-h" style="background-color: rgb(255, 255, 255); padding-top: 15px; padding-bottom: 120px;">
 
-    <div>Your  Rank:<?php echo $rank; ?></div>
+    <div class="container" style=" padding-bottom: 70px;">
+        <div class="row"><span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-4 col-xs-12 col-sm-4" style=" font-size: 3rem;
+  font-weight: 600;     font-family: 'Montserrat', sans-serif;
+  letter-spacing: -1px; ">Your  Rank is :</span><span class="mbr-section-title col-md-1 text-xs-center col-xs-12" style="  font-size: 3rem;
+  font-weight: 700;     font-family: 'Montserrat', sans-serif; color: grey;
+  letter-spacing: -1px;"><?php echo $rank; ?></span></div></div>
     <div class="container">
         <div class="row">
             <div class="mbr-table-md-up">

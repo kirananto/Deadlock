@@ -1,6 +1,7 @@
 
 <?php
 //Include FB config file && User class
+include 'top-cache.php';
 require_once 'fbConfig.php';
 require_once 'User.php';
 if(!$fbUser){
@@ -208,3 +209,6 @@ $_SESSION['fbUser'] = $fbUser;
    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
   </body>
 </html>
+<?php 
+include 'bottom-cache.php';
+?>
