@@ -376,6 +376,17 @@ h6,
 .mbr-company .list-group-item.active .list-group-text {
   color: #2969b0;
 }
+
+.avatar {
+    height: 32px;
+    width: 32px;
+    float:right;
+    display: inline-block;
+    background-size: 32px 32px;
+    border-radius: 32px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
 .mbr-footer p a,
 .mbr-footer ul a {
   color: #2969b0;

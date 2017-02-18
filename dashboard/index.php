@@ -31,7 +31,6 @@ $hash="";
 $rank="";
 
 $email=$userdata['email'];
-
 $userid=$userdata['id'];
 $res=fetchquery("SELECT lvlno from leadersboard where id=$userid;");
 $rankvar=fetchquery("SELECT count(*)+1 as rank from leadersboard where lvlno>(SELECT lvlno from leadersboard where id=$userid)");
@@ -154,7 +153,7 @@ echo 'error:leadersboard access';
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="/leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><a class="nav-link link" href="/logout.php" aria-expanded="false">LOGOUT</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><?php if($_SESSION['userData']['isadmin']){?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="/manage/index.php">GO TO ADMIN PANEL</a></li><?php } else { ?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="https://www.facebook.com/D4Deadlock">CHECK CLUES</a></li><?php } ?></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="/leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><a class="nav-link link" href="/logout.php" aria-expanded="false">LOGOUT</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><?php if($_SESSION['userData']['isadmin']){?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="/manage/index.php">GO TO ADMIN PANEL</a></li><?php } else { ?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="https://www.facebook.com/D4Deadlock">CHECK CLUES</a></li><?php } ?><li class="nav-item dropdown"><div class="avatar hidden-md-down" style="background-image: url(&quot;<?php echo $userdata['picture'] ?>&quot;);"></div></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
@@ -185,8 +184,8 @@ echo 'error:leadersboard access';
 
 <section class="mbr-section" id="msg-box5-h" style="background-color: rgb(255, 255, 255); padding-top: 15px; padding-bottom: 120px;">
 
-    <div class="container" style=" padding-bottom: 70px;">
-        <div class="row"><span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-5 col-xs-12 col-sm-8" style=" font-size: 3rem;
+    <div class="container" style=" padding-bottom: 70px;"><div class="row">
+        <span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-5 col-xs-12 col-sm-8" style=" font-size: 3rem;
   font-weight: 600;     font-family: 'Montserrat', sans-serif;
   letter-spacing: -1px; ">Your  Rank is :</span><span class="mbr-section-title col-md-1 text-xs-center col-xs-12 col-sm-2" style="  font-size: 3rem;
   font-weight: 700;     font-family: 'Montserrat', sans-serif; color: grey;
