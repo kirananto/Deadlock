@@ -133,7 +133,7 @@ echo '</tr>';
 </table>
 
 <h1 id="heading23"> USER TRIES </h1>
-<table id="usertrys"class= "display table table-hover">
+<table id="usertrys" class= "display table table-hover">
 
  <thead>
                                 <tr>
@@ -153,6 +153,10 @@ echo '</tr>';
 
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
 <script>
+function showStuff(id) {
+    document.getElementById(id).style.display = 'block';
+}
+
 $(document).ready( function () {
     $('#users').DataTable();
 } );
@@ -161,8 +165,8 @@ $(document).ready( function () {
 function view(id)
 {
 
-//document.getElementById("heading23").style.display = "none";
-//document.getElementById("usertrys").style.display = "none";
+//howStuff(heading23);
+//showStuff(usertrys);
 $.post("viewusers.php",{"id":id},function(dataset){
 console.log(dataset);
 

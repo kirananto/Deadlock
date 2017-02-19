@@ -388,9 +388,9 @@
     background-color: #fff;
     border-color: #fff; }
   .btn-white-outline:hover {
-    color: #535353;
-    background-color: #fff;
-    border-color: #fff; }
+    color: #fff;
+    background-color: #00964d;
+    border-color: #00964d; }
   .btn-white-outline.disabled, .btn-white-outline:disabled {
     color: #535353 !important;
     background-color: #fff !important;
@@ -419,23 +419,24 @@ a.mbr-iconfont:hover {
   text-decoration: none; }
 
 .btn-social {
-  font-size: 20px;
-  border-radius: 50%;
-  padding: 0;
-  width: 44px;
-  height: 44px;
-  line-height: 44px;
-  text-align: center;
-  position: relative;
-  border: 2px solid #c0a375;
-  color: #232323; }
+    font-size: 20px;
+    padding: 10;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    position: relative;
+    border: 2px solid #00964d;
+    color: #fff;
+}
+
   .btn-social i {
     top: 0;
     line-height: 44px;
     width: 44px; }
   .btn-social:hover {
     color: #fff;
-    background: #c0a375; }
+    background: #00964d; }
   .btn-social + .btn {
     margin-left: 0.1rem; }
 

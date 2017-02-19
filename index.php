@@ -102,6 +102,7 @@ $_SESSION['fbUser'] = $fbUser;
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/animate.css/animate.min.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/additional/css/mbr-additional.css" type="text/css">
   
 </head>
@@ -139,7 +140,7 @@ $_SESSION['fbUser'] = $fbUser;
 
 </section>
 
-<section class="engine"></section><section class="mbr-section mbr-section-hero mbr-section-full mbr-parallax-background mbr-section-with-arrow mbr-after-navbar" id="header1-1" style="background-image: url(assets/images/jumbotron.jpg);">
+<section class="engine"></section><section class="mbr-section mbr-section-hero mbr-section-full mbr-parallax-background mbr-section-with-arrow mbr-after-navbar" id="header1-1" style="background-image: url(assets/images/intro-bg.jpeg); background-color: rgba(0,0,0,0.6);">
 
     
 
@@ -161,7 +162,7 @@ $_SESSION['fbUser'] = $fbUser;
 
 </section>
 
-<section class="mbr-section mbr-parallax-background" id="content5-0" style="background-image: url(assets/images/desert2.jpg); padding-top: 120px; padding-bottom: 120px;">
+<section class="mbr-section mbr-parallax-background" id="content5-0" style="background-image: url(assets/images/13.jpg); background-color: rgba(0,0,0,0.6); padding-top: 120px; padding-bottom: 120px;">
 
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);">
     </div>
@@ -172,7 +173,17 @@ $_SESSION['fbUser'] = $fbUser;
     </div>
 
 </section>
-
+<section class="mbr-section mbr-section-md-padding mbr-parallax-background" id="social-buttons2-1" style="background-image: url(assets/images/12.jpg);  background-color: rgba(0,0,0,0.6); padding-top: 90px; padding-bottom: 90px;">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-xs-center">
+                <h3 class="mbr-section-title display-2" style="color: white">FOLLOW US</h3>
+                <div> <a class="btn btn-social" title="Facebook" target="_blank" href="https://www.facebook.com/D4Deadlock"><i class="socicon socicon-facebook"></i></a> <a class="btn btn-social" title="Google+" target="_blank" href="#top"><i class="socicon socicon-googleplus"></i></a> <a class="btn btn-social" title="YouTube" target="_blank" href="#top"><i class="socicon socicon-youtube"></i></a> <a class="btn btn-social" title="Instagram" target="_blank" href="#top"><i class="socicon socicon-instagram"></i></a>      </div>
+            </div>
+        </div>
+    </div>
+</section>
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-d" style="background-image: url(/assets/images/footer.jpg); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
     <div class="container">

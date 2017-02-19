@@ -368,10 +368,11 @@ h6,
   background-color: #f28281;
 }
 .btn-social {
-  border-color: #2969b0;
+  border-color: #fff;
 }
 .btn-social:hover {
-  background: #2969b0;
+  background: #00964d;
+  border-color: #00964d;
 }
 .mbr-company .list-group-item.active .list-group-text {
   color: #2969b0;
@@ -724,4 +725,3 @@ h6,
 #msg-box8-e p {
   color: #fff;
 }
-
