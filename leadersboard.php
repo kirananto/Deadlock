@@ -74,9 +74,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
         </div>
     </nav>
 </section>
-<section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-8" style="background-image: url(assets/images/jumbotron.jpg); background-color: rgba(0,0,0,0.6); padding-top: 200px; padding-bottom: 200px;">
-    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(34, 34, 34);">
-    </div>
+<section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-8" style="background-image: url(assets/images/jumbotron.jpg); padding-top: 150px; padding-bottom: 80px;">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
@@ -86,7 +84,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
         </div>
     </div>
 </section> 
-<section class="mbr-section article mbr-section__container" id="content1-b" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px; ">
+<section class="mbr-section-full article mbr-section__container" id="content1-b" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px; ">
 
     <div class="container col-md-offset-1 col-xs-offset-1">
         <div class="row">

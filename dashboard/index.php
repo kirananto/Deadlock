@@ -143,7 +143,7 @@ echo 'error:leadersboard access';
 
                     <div class="navbar-brand">
                         <a href="index.php" class="navbar-logo"><img src="/assets/images/untitled-130x128.png" alt="Deadlock"></a>
-                       <a class="navbar-caption" href="../index.php"><img class = " col-md-5 col-xs-5 col-sm-5" src = "../assets/images/logo.png" /></a>
+                       <a class="navbar-caption" href="../index.php"><img class = " col-md-7 col-xs-5 col-sm-5" src = "../assets/images/logo.png" /></a>
                     </div>
 
                 </div>
@@ -168,8 +168,6 @@ echo 'error:leadersboard access';
 
 <section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-e" style="background-image: url(/assets/images/jumbotron.jpg); padding-top: 120px; padding-bottom: 120px;">
 
-    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(34, 34, 34);">
-    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
@@ -182,10 +180,10 @@ echo 'error:leadersboard access';
 
 </section>
 
-<section class="mbr-section" id="msg-box5-h" style="background-color: rgb(255, 255, 255); padding-top: 15px; padding-bottom: 120px;">
+<section class="mbr-section" id="msg-box5-h" style="background-color: rgb(255, 255, 255); padding-top: 25px; padding-bottom: 120px;">
 
     <div class="container" style=" padding-bottom: 70px;"><div class="row">
-        <span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-5 col-xs-12 col-sm-8" style=" font-size: 3rem;
+        <span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-6 col-xs-11 col-sm-8" style=" font-size: 3rem;
   font-weight: 600;     font-family: 'Montserrat', sans-serif;
   letter-spacing: -1px; ">Your  Rank is :</span><span class="mbr-section-title col-md-1 text-xs-center col-xs-12 col-sm-2" style="  font-size: 3rem;
   font-weight: 700;     font-family: 'Montserrat', sans-serif; color: #00964d";
@@ -194,7 +192,7 @@ echo 'error:leadersboard access';
         <div class="row">
             <div class="mbr-table-md-up">
 
-              <div class="mbr-table-cell mbr-right-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 70%;">
+              <div class="mbr-table-cell mbr-right-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 50%;">
                   <div class="mbr-figure"><img src="img.php?img=<?php echo $hash; ?>" class="img-rounded" alt=" Image appears here "></div>
               </div>
 
