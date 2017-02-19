@@ -419,24 +419,23 @@ a.mbr-iconfont:hover {
   text-decoration: none; }
 
 .btn-social {
-    font-size: 20px;
-    padding: 10;
-    width: 44px;
-    height: 44px;
-    line-height: 44px;
-    text-align: center;
-    position: relative;
-    border: 2px solid #00964d;
-    color: #fff;
-}
-
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 10;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  position: relative;
+  border: 2px solid #c0a375;
+  color: #fff; }
   .btn-social i {
     top: 0;
     line-height: 44px;
     width: 44px; }
   .btn-social:hover {
     color: #fff;
-    background: #00964d; }
+    background: #c0a375; }
   .btn-social + .btn {
     margin-left: 0.1rem; }
 
@@ -1258,6 +1257,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   margin-bottom: 0;
   font-size: 1.25rem;
   font-weight: bold;
+  color: #00964d;
   letter-spacing: -1px;
   line-height: 1.2825; }
   .mbr-cards .card-title + * {

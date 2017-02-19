@@ -74,7 +74,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
         </div>
     </nav>
 </section>
-<section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-8" style="background-image: url(assets/images/jumbotron.jpg); padding-top: 120px; padding-bottom: 120px;">
+<section class="engine"></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-8" style="background-image: url(assets/images/jumbotron.jpg); background-color: rgba(0,0,0,0.6); padding-top: 200px; padding-bottom: 200px;">
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(34, 34, 34);">
     </div>
     <div class="container">
@@ -94,7 +94,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
      
 <table class="table table-hover">
 
-<thead><tr><th>Rank</th><th>Name</th><th>College</th><th>Level</th></tr></thead><tbody>
+<thead style="color: #00964d;"><tr><th>Rank</th><th>Name</th><th>College</th><th>Level</th></tr></thead><tbody>
 <?php
 if($res!=null)
 {

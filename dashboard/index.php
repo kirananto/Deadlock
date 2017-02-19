@@ -188,7 +188,7 @@ echo 'error:leadersboard access';
         <span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-5 col-xs-12 col-sm-8" style=" font-size: 3rem;
   font-weight: 600;     font-family: 'Montserrat', sans-serif;
   letter-spacing: -1px; ">Your  Rank is :</span><span class="mbr-section-title col-md-1 text-xs-center col-xs-12 col-sm-2" style="  font-size: 3rem;
-  font-weight: 700;     font-family: 'Montserrat', sans-serif; color: grey;
+  font-weight: 700;     font-family: 'Montserrat', sans-serif; color: #00964d";
   letter-spacing: -1px;"><?php echo $rank; ?></span></div></div>
     <div class="container">
         <div class="row">

@@ -140,7 +140,11 @@ $_SESSION['fbUser'] = $fbUser;
 
 </section>
 
-<section class="engine"></section><section class="mbr-section mbr-section-hero mbr-section-full mbr-parallax-background mbr-section-with-arrow mbr-after-navbar" id="header1-1" style="background-image: url(assets/images/intro-bg.jpeg); background-color: rgba(0,0,0,0.6);">
+<section class="engine"></section><section class="mbr-section mbr-section-hero mbr-section-full mbr-parallax-background mbr-section-with-arrow mbr-after-navbar" id="header1-1" style="background: url(assets/images/intro-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
 
     
 
@@ -158,22 +162,25 @@ $_SESSION['fbUser'] = $fbUser;
         </div>
     </div>
 
-    <div class="mbr-arrow mbr-arrow-floating" aria-hidden="true"><a href="#footer1-2"><i class="mbr-arrow-icon"></i></a></div>
+    <div class="mbr-arrow mbr-arrow-floating" aria-hidden="true"><a href="#footer1-d"><i class="mbr-arrow-icon"></i></a></div>
 
 </section>
 
-<section class="mbr-section mbr-parallax-background" id="content5-0" style="background-image: url(assets/images/13.jpg); background-color: rgba(0,0,0,0.6); padding-top: 120px; padding-bottom: 120px;">
-
-    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);">
-    </div>
-
+<section class="mbr-section-full mbr-parallax-background" id="content5-0" style="background: url(assets/images/13.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; padding-top: 320px; padding-bottom: 220px;">
     <div class="container">
         <h3 class="mbr-section-title display-2">Start playing, and think harder!</h3>
         <div class="lead"><p>An exciting online treasure hunt</p></div>
     </div>
-
 </section>
-<section class="mbr-section mbr-section-md-padding mbr-parallax-background" id="social-buttons2-1" style="background-image: url(assets/images/12.jpg);  background-color: rgba(0,0,0,0.6); padding-top: 90px; padding-bottom: 90px;">
+<section class="mbr-section mbr-section-md-padding mbr-parallax-background" id="social-buttons2-1" style="background: url(assets/images/12.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  padding-top: 90px; padding-bottom: 90px;">
     
     <div class="container">
         <div class="row">
