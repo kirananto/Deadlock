@@ -80,7 +80,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
-                <h3 class="mbr-section-title display-2">LEADERBOARD</h3>
+                <h3 class="mbr-section-title display-4">LEADERBOARD</h3>
                 <div class="lead"><p>Don't rest until you climb to the top..!!.</p></div>
  </div>
         </div>
