@@ -95,6 +95,11 @@ h6,
 .bg-danger {
   background-color: #f28281 !important;
 }
+
+.userdetails_text {
+  color: #00964d; 
+  font-weight: 600;  
+}
 .btn-primary {
   background-color: #00964d;
   border-color: #00964d;
