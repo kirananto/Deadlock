@@ -116,7 +116,7 @@ $i=0;
  while($row=$res->fetch_assoc())
 {
 echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td>'.$row['answer'].'</td><td><p onclick="editlevel(\''.$row['lvlno'].'\');"><input  id="leveltog" '.($row['enabled']!=0?"checked":"").' levelno="'.$row['lvlno'].'" data-toggle="toggle" type="checkbox"></p></td><td>
-<p onclick="editlevel(\''.$row['lvlno'].'\');">Edit</p></td></tr>';
+<p class="btn btn-primary" onclick="editlevel(\''.$row['lvlno'].'\');">Edit</p></td></tr>';
 
 
 }
