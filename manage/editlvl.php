@@ -1,6 +1,14 @@
 <?php
 
 session_start();
+include '../common/auth.php';
+if($_SESSION['userData']['isadmin']==0)
+{
+
+header("Location:/?redir=na");
+exit;
+
+}
 if(empty($_GET)&&empty($_POST))
 {
 	header("Location:index.php");
@@ -119,12 +127,12 @@ if(!empty($_POST)){
       {
       $id=$_POST['lvlno'];
 $f=  $_FILES['images']['name'];
-      fetchquery("UPDATE levels set answer=$answer,lvlimage=$f  where lvlno=".$id );
+      fetchquery("UPDATE levels set answer=$answer,lvlimage=$f,enabled=$isenabled where lvlno=".$id );
       
       }
       else{
       
-fetchquery("UPDATE levels set answer=$answer   where lvlno=".$id );
+fetchquery("UPDATE levels set answer=$answer,enabled=$isenabled  where lvlno=".$id );
 
          }
               header("Location:editlvl.php?lvlno=".$id);
@@ -181,9 +189,8 @@ include '../common/adminpanel.php'; ?>
 
 <form method="POST" action="levelchange.php" enctype="multipart/form-data">
 <div class = "form-group">
-<label for="lvlno">Level No:<?php echo $lvlno;?></label>
-
-
+<label for="lvlno">Level No:</label>
+<input type="text" class="form-control" name="lvlno" disabled value="<?php echo $lvlno;?>"></input>
       </div>
       <div class = "form-group">
       <label for="lvlans">Answer to the Level :</label>
@@ -199,6 +206,12 @@ include '../common/adminpanel.php'; ?>
 <label for="image">Level Image :</label>
   <input type="file" id="image" name="image" class="form-control">
       </div>
+
+       <div class="form-group">
+      <label for="tog"> Enable Level :        &nbsp  &nbsp  &nbsp  &nbsp</label>
+      <input type="checkbox" class="col-md-2" id="tog" name="tog" checked data-toggle="toggle" value=1>
+      </div>
+
 <br>
  <div class = "form-group"><button type="submit" name= "submit" class="btn btn-raised col-xs-12  col-md-6 col-md-offset-3 ripple-effect btn-primary btn-lg"> Submit</button></div>
 
