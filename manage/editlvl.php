@@ -74,7 +74,7 @@ if($res!=null)
 
 <?php
 
-if(!empty($_POST)){
+if(!empty($_GET)){
     $imgisthere=0;
    if(isset($_FILES['image'])){
       $errors= array();
@@ -187,7 +187,7 @@ fetchquery("UPDATE levels set answer=$answer,enabled=$isenabled  where lvlno=".$
      <?php 
 include '../common/adminpanel.php'; ?>
 
-<form method="POST" action="levelchange.php" enctype="multipart/form-data">
+<form method="POST" action="editlvl.php" enctype="multipart/form-data">
 <div class = "form-group">
 <label for="lvlno">Level No:</label>
 <input type="text" class="form-control" name="lvlno" disabled value="<?php echo $lvlno;?>"></input>
