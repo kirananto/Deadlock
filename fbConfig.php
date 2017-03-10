@@ -9,7 +9,7 @@ require_once 'inc/facebook.php';
  */
 $appId = '237412096715854'; //Facebook App ID
 $appSecret = '390b6a9dd1e737868a50de4a3fad7805'; // Facebook App Secret
-$redirectURL = 'http://139.59.23.4/'; // Callback URL
+$redirectURL = 'http://deadlock.a3k.in/';// Callback URL
 $fbPermissions = 'email';  //Required facebook permissions
 
 //Call Facebook API

@@ -112,7 +112,7 @@ while($row=$res->fetch_assoc())
 
 echo '<tr onclick="view('.$row['id'].')">';
 
-$a=array("id","college","email","phoneno");
+$a=array("id","college","email","mobno");
 for($i=0;$i<count($a);$i++)
 {
 if($i==1){echo '<td>'.$row['first_name'].' '.$row['last_name'].'</td>';}

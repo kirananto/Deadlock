@@ -114,9 +114,9 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
                 <div class="card cart-block">
                     <div class="card-img iconbox"><a class="etl-icon icon-edit mbr-iconfont mbr-iconfont-features4" style="color: black;"></a></div>
                     <div class="card-block">
-                        <h4 class="card-title">We suggest you enter FULL NAMES.</h4>
+                        <h4 class="card-title">We suggest you enter FULL NAMES including space.</h4>
                         <h5 class="card-subtitle"></h5>
-                        <p class="card-text">Eg. If the answer is Barney Stinson, then your entry should be ‘barneystinson’.</p>
+                        <p class="card-text">Answer is CASE INSENSITIVE.Eg.barton hills,Barton Hills,BARTON HILLS,BaRtOn HilLs are all same</p>
                         
                     </div>
                 </div>

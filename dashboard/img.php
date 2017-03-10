@@ -9,7 +9,7 @@ session_start();
 
 
 header("Content-type: image/png");
-$stmt = $mysqli->prepare('SELECT * from imageaccess where imagehash=?');
+$stmt = $mysqli->prepare('SELECT * from imageaccess where imagehash=? limit 1');
 $stmt->bind_param("s",$h);
 $stmt->execute();
 $res=$stmt->get_result();

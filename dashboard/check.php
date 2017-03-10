@@ -28,6 +28,7 @@ if($res!=null)
 {
 	$row=$res->fetch_assoc();
 	$lvl=$row["lvlno"];
+$lvl++;
 	$stmt=$mysqli->prepare("INSERT into tried values(?,?,?,?,?);");
 	$nowdate=date("Y-m-d H:i:s");
 	$ip=get_ip();
@@ -52,7 +53,8 @@ if($res!=null)
 	
 $nextlevelrow=$res->fetch_assoc();
 $nextlevel=$nextlevelrow['lvlno'];
-fetchquery("UPDATE  leadersboard SET lvlno='$nextlevel' where id='$id';");
+// changeed: above lines are not needed but not removing no neeed to calculate nextlevel
+fetchquery("UPDATE  leadersboard SET lvlno='$lvl' where id='$id';");
 	
 	}
 	echo "success";

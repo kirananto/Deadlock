@@ -50,12 +50,16 @@ $res=fetchquery("SELECT * from levels order by lvlno");
 
 function editlevel(i)
 {
-window.location = "http://deadlock.a3k.in/manage/editlvl.php?lvlno="+i;
+window.location = "http://139.59.23.4/manage/editlvl.php?lvlno="+i;
 }
+$(document).ready( function () {
 
+$('#leveltog').change(function() {
 
-function changelevel(i)
-{window.location="http://deadlock.a3k.in/manage/togglelevel.php?lvlno="+i;}
+levelno=$(this).attr('levelno');
+alert(levelno);
+
+})});
 </script>
 <section id="menu-5">
 
@@ -111,8 +115,8 @@ if($res!=null)
 $i=0;
  while($row=$res->fetch_assoc())
 {
-echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td>'.$row['answer'].'</td><td><p ><input  id="leveltog" '.($row['enabled']!=0?"checked":"").' levelno="'.$row['lvlno'].'" data-toggle="toggle" type="checkbox"></p></td><td>
-<p class="btn btn-primary" onclick="editlevel(\''.$row['lvlno'].'\');">Edit</p></td></tr>';
+echo '<tr><th scope = "row">'.$row['lvlno'].'</th><td>'.$row['answer'].'</td><td><p onclick="editlevel(\''.$row['lvlno'].'\');"><input  id="leveltog" '.($row['enabled']!=0?"checked":"").' levelno="'.$row['lvlno'].'" data-toggle="toggle" type="checkbox"></p></td><td>
+<p onclick="editlevel(\''.$row['lvlno'].'\');">Edit</p></td></tr>';
 
 
 }

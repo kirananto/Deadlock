@@ -1,35 +1,30 @@
 <?php
 
 session_start();
-include '../common/auth.php';
-if($_SESSION['userData']['isadmin']==0)
-{
-
-header("Location:/?redir=na");
-exit;
-
-}
+$answer="";
+$imgurl="";
+$isenable=0;
 if(empty($_GET)&&empty($_POST))
 {
 	header("Location:index.php");
 	exit;
 }
-if(!empty($_GET))
+if(!empty($_GET)&&$_GET['lvlno']!='')
 {
 include('../common/con.php');
 $userdata=$_SESSION['userData'];
 $lvlno=$_GET['lvlno'];
-$answer="";
-$imgurl="";
-$res=fetchquery("SELECT  * from levels where id=$lvlno");
+
+$res=fetchquery("SELECT  * from levels where lvlno=$lvlno");
 if($res!=null)
 {
 	if($res->num_rows==1)
 	{	$row=$res->fetch_assoc();
 		$imgurl=$row['lvlimage'];
+    $isenable=$row['enabled'];
 		$answer=$row['answer'];
 		$id=$userdata['id'];
-		$h=crypt($imageurl.$id,"saltitbro");
+		$h=crypt($imgurl.$id,"saltitbro");
 		$imgurl='/dashboard/img.php?img='.$h;
 		$ip=get_ip();
 		$actualimage=$row['lvlimage'];
@@ -74,69 +69,6 @@ if($res!=null)
 
 <?php
 
-if(!empty($_GET)){
-    $imgisthere=0;
-   if(isset($_FILES['image'])){
-      $errors= array();
-      $levelno = $_POST["lvlno"];
-      $lvlans = $_POST["lvlans"];
-      $isenabled = $_POST["tog"];
-      $file_name = $_FILES['image']['name'];
-      $file_size = $_FILES['image']['size'];
-      $file_tmp = $_FILES['image']['tmp_name'];
-      $file_type = $_FILES['image']['type'];
-      $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
-      $expensions= array("jpeg","jpg","png");
-      if($isenabled != 1){ $isenabled = 0;}
-   
-     
-      if(in_array($file_ext,$expensions)=== false){
-         $errors[]="extension not allowed, please choose a JPEG or PNG file.";
-      }
-      
-      if($file_size > 2097152) {
-         $errors[]='File size must be less than 2 MB';
-      }
-
-    
-      if(empty($errors)==true) {
-         if(move_uploaded_file($_FILES['image']['tmp_name'],"/var/www/html/levelsmade/".$_FILES['image']['name'])) {
-          $imgisthere=1;
-         
-      } else {
-        $errors[]="Couldn't Upload Files";
-      
-      }}
-      if(!empty($errors)==true)
-      {
-        $i = 0;
-        $message= "";
-        do{
-		$message = $message.$errors[$i];
-		$i++;
-	  } while($errors[$i]!= null);
-	     phpAlert($message);
-      
-      }
-      else{ 
-      
-    $imgisthere=1;  
-    }
-    }else{$imgisthere=0;}
-      if($imgisthere)
-      {
-      $id=$_POST['lvlno'];
-$f=  $_FILES['images']['name'];
-      fetchquery("UPDATE levels set answer=$answer,lvlimage=$f,enabled=$isenabled where lvlno=".$id );
-      
-      }
-      else{
-      
-fetchquery("UPDATE levels set answer=$answer,enabled=$isenabled  where lvlno=".$id );
-
-         }
-              header("Location:editlvl.php?lvlno=".$id);
-               }
                
 ?>
 
@@ -187,12 +119,15 @@ fetchquery("UPDATE levels set answer=$answer,enabled=$isenabled  where lvlno=".$
      <?php 
 include '../common/adminpanel.php'; ?>
 
-<form method="POST" action="editlvl.php" enctype="multipart/form-data">
+<form method="POST" action="changelevel.php" enctype="multipart/form-data">
 <div class = "form-group">
-<label for="lvlno">Level No:</label>
-<input type="text" class="form-control" name="lvlno" disabled value="<?php echo $lvlno;?>"></input>
+<label for="lvlno">Level No:<?php echo $lvlno;?></label>
+
+
       </div>
+      
       <div class = "form-group">
+      <input type="hidden" name="lvlno" value="<?php echo $lvlno; ?>">
       <label for="lvlans">Answer to the Level :</label>
  <input type="text" id="lvlans" value="<?php echo $answer; ?>" name="lvlans" class="form-control" placeholder="Answer to the Level :">
       </div>
@@ -206,14 +141,13 @@ include '../common/adminpanel.php'; ?>
 <label for="image">Level Image :</label>
   <input type="file" id="image" name="image" class="form-control">
       </div>
-
-       <div class="form-group">
-      <label for="tog"> Enable Level :        &nbsp  &nbsp  &nbsp  &nbsp</label>
-      <input type="checkbox" class="col-md-2" id="tog" name="tog" checked data-toggle="toggle" value=1>
-      </div>
-
 <br>
- <div class = "form-group"><button type="submit" name= "submit" class="btn btn-raised col-xs-12  col-md-6 col-md-offset-3 ripple-effect btn-primary btn-lg"> Submit</button></div>
+ <div class="form-group">
+      <label for="tog"> Enable Level :        </label>
+      <input type="checkbox" class="col-md-2" id="tog" name="tog" <?php echo $isenable?"checked":"off";?> data-toggle="toggle" value=1>
+      </div>
+      <br>
+ <div class = "form-group"><button type="submit" name= "submit" class="btn btn-raised col-xs-12  col-md-6 col-md-offset-3 ripple-effect btn-primary btn-lg"> Update question</button></div>
 
 
 

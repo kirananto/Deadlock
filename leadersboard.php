@@ -1,6 +1,6 @@
 <?php
 include 'common/con.php';
-$res=fetchquery("SELECT * from leadersboard order by lvlno desc,date desc ;");
+$res=fetchquery("SELECT * from leadersboard order by lvlno desc,date asc ;");
 ?>
 <?php
 require_once 'fbConfig.php';
@@ -101,7 +101,7 @@ for($i=0;$i<$res->num_rows;$i++)
 {
 $r=$res->fetch_assoc();
 
-echo '<tr><th scope = "row">'.($i+1).'</th><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.$r['lvlno'].'</td></tr>';
+echo '<tr><th scope = "row">'.(($i)+1).'</th><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.($r['lvlno']) .'</td></tr>';
 if($i == 99) break;
 
 }

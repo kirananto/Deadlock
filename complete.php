@@ -40,7 +40,7 @@ if($res==null)
 {
 echo "Error complete ".$mysqli->error;
 }
-$res1=fetchquery("INSERT into leadersboard values($id,'".$fname.' '.$lastname."',1,'".date("Y-m-d H:i:s")."','".$college."');");
+$res1=fetchquery("INSERT into leadersboard values($id,'".$fname.' '.$lastname."',0,'".date("Y-m-d H:i:s")."','".$college."');");
 
 if($res1!=null)
 

@@ -29,11 +29,11 @@ $email=$_SESSION['userData']['email'];
 
 $hash="";
 $rank="";
-
+$user_on_top_level=0;
 $email=$userdata['email'];
 $userid=$userdata['id'];
 $res=fetchquery("SELECT lvlno from leadersboard where id=$userid;");
-$rankvar=fetchquery("SELECT count(*)+1 as rank from leadersboard where lvlno>(SELECT lvlno from leadersboard where id=$userid)");
+$rankvar=fetchquery("SELECT count(*)+1 as rank from leadersboard where lvlno>=(SELECT lvlno from leadersboard where id=$userid) and date < (SELECT date from leadersboard where id=$userid) ");
 if($rankvar!=null)
 {
 
@@ -50,8 +50,9 @@ if($res!=null)
 	{
 	$row=$res->fetch_assoc();
 	$lvl=$row['lvlno'];
-	
-	$res=fetchquery("SELECT * from levels where lvlno='$lvl';");
+	//lvl incremented bcoz it is 0-starting
+
+	$res=fetchquery("SELECT * from levels where lvlno>'$lvl' and enabled=1 order by lvlno limit 1;");
 	if($res!=null)
 	{
 		if($res->num_rows==1)
@@ -70,6 +71,7 @@ if($res!=null)
 		else{
 
 
+		$user_on_top_level=1;
 
 
 		}
@@ -172,7 +174,7 @@ echo 'error:leadersboard access';
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
                 <h3 class="mbr-section-title display-2">Overclock your Brain</h3>
-                <div class="lead"><p>Try... &nbsp; Answer if you can..!!!</p></div>
+                
                 
             </div>
         </div>
@@ -188,15 +190,29 @@ echo 'error:leadersboard access';
   letter-spacing: -1px; ">Your  Rank is :</span><span class="mbr-section-title col-md-1 text-xs-center col-xs-12 col-sm-2" style="  font-size: 3rem;
   font-weight: 700;     font-family: 'Montserrat', sans-serif; color: #00964d";
   letter-spacing: -1px;"><?php echo $rank; ?></span></div></div>
-    <div class="container">
+ 
+<?php
+
+//if user on top level this code works
+if($user_on_top_level)
+{
+?>
+    <div class="container" style=" padding-bottom: 70px;"><div class="row">
+        <span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-6 col-xs-11 col-sm-8" style=" font-size: 2rem;
+  font-weight: 600;     font-family: 'Montserrat', sans-serif;
+  letter-spacing: -1px; "> More Questions coming soon...</span></div></div>
+ <?php
+}
+?>
+  <div class="container">
         <div class="row">
             <div class="mbr-table-md-up">
 
               <div class="mbr-table-cell mbr-right-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 50%;">
-                  <div class="mbr-figure"><img src="img.php?img=<?php echo $hash; ?>" class="img-rounded" alt=" Image appears here "></div>
+                  <div class="mbr-figure"><img src="img.php?img=<?php echo $hash; ?>" class="img-rounded myImg" alt=" Image appears here "></div>
               </div>
 
-              
+         
 
 
               <div class="mbr-table-cell col-md-5 text-xs-center text-md-left content-size" id= "closestdiv">
@@ -261,6 +277,21 @@ var alert1 = function(data1) {
   <script src="/assets/theme/js/script.js"></script>
   
   <script src="/assets/dist/sweetalert.min.js"></script>
+
+       <?php
+               if($user_on_top_level)
+              {
+                ?>
+              <script type="text/javascript">
+  $(document).ready(function() {
+        $(".myImg").attr('src',"/assets/images/meme1.jpg");
+    });
+   document.getElementById("closestdiv").style.display = 'none';
+   //document.getElementById("myImg").style.max-width = '50%';
+  </script>
+              <?php
+}
+?>
   
   <input name="animation" type="hidden">
    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>

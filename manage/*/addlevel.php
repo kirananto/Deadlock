@@ -116,15 +116,12 @@ include '../common/adminpanel.php'; ?>
 </form>
 
 <?php
-
-if(isset($_POST['submit']))
-{
  
       $errors= array();
       $levelno = $_POST["lvlno"];
       $lvlans = $_POST["lvlans"];
       $isenabled = $_POST["tog"];
-       $file_name = $_FILES['image']['name'];
+      $file_name = $_FILES['image']['name'];
       $file_size = $_FILES['image']['size'];
       $file_tmp = $_FILES['image']['tmp_name'];
       $file_type = $_FILES['image']['type'];
@@ -140,9 +137,6 @@ if(isset($_POST['submit']))
       if($file_size > 2097152) {
          $errors[]='File size must be less than 2 MB';
       }
-
-$_FILES['image']['name']=(string)rand(0,1888).$_FILES['image']['name'];
-     
 
       if($lvl != null) {
       if($lvl->num_rows!=0)
@@ -170,7 +164,7 @@ $_FILES['image']['name']=(string)rand(0,1888).$_FILES['image']['name'];
       {
         phpAlert("Please Fill in all the Fields");
       }
- }
+ 
 ?>
    <?php
 function phpAlert($msg) {
