@@ -267,8 +267,17 @@ $.post("check.php",{"ans":txt},function(data){
 var alert1 = function(data1) {
    
         if(data1[data1.length-1] == 's') {
-            swal("Good job!", "You've got the Right Answer", "success");
+            
+
+    setTimeout(function() {
+        swal({
+            title: "Good job!",
+            text: "You've got the Right Answer",
+            type: "success"
+        }, function() {
             location.reload();
+        });
+    }, 1000);
             
         } else {
             sweetAlert("Sorry...", "Wrong Answer.!", "error");
