@@ -1,13 +1,21 @@
 <?php
 
 session_start();
+include '../common/auth.php';
+if($_SESSION['userData']['isadmin']==0)
+{
+
+header("Location:/?redir=na");
+exit;
+
+}
 $answer="";
 $imgurl="";
 $isenable=0;
 if(empty($_GET)&&empty($_POST))
 {
-	header("Location:index.php");
-	exit;
+  header("Location:index.php");
+  exit;
 }
 if(!empty($_GET)&&$_GET['lvlno']!='')
 {
@@ -18,18 +26,18 @@ $lvlno=$_GET['lvlno'];
 $res=fetchquery("SELECT  * from levels where lvlno=$lvlno");
 if($res!=null)
 {
-	if($res->num_rows==1)
-	{	$row=$res->fetch_assoc();
-		$imgurl=$row['lvlimage'];
+  if($res->num_rows==1)
+  { $row=$res->fetch_assoc();
+    $imgurl=$row['lvlimage'];
     $isenable=$row['enabled'];
-		$answer=$row['answer'];
-		$id=$userdata['id'];
-		$h=crypt($imgurl.$id,"saltitbro");
-		$imgurl='/dashboard/img.php?img='.$h;
-		$ip=get_ip();
-		$actualimage=$row['lvlimage'];
-		fetchquery("INSERT into imageaccess values('$h','$ip',$id,'$actualimage');");
-	}
+    $answer=$row['answer'];
+    $id=$userdata['id'];
+    $h=crypt($imgurl.$id,"saltitbro");
+    $imgurl='/dashboard/img.php?img='.$h;
+    $ip=get_ip();
+    $actualimage=$row['lvlimage'];
+    fetchquery("INSERT into imageaccess values('$h','$ip',$id,'$actualimage');");
+  }
 }
 }
 ?>

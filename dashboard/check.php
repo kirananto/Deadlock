@@ -45,7 +45,7 @@ $lvl++;
 	$levelrow=$res->fetch_assoc();
 	$answer=$levelrow['answer'];
 	header("Content-Type:text/plain");
-	if($answer==$ans)
+	if(strtolower($answer)==strtolower($ans))
 	{
 	$res=fetchquery("SELECT * from levels where lvlno>$lvl and enabled=1");
 	if($res!=null)

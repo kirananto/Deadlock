@@ -11,17 +11,17 @@ exit;
 if(!isset($userdata['isadmin']))
 {
 $email=$_SESSION['userData']['email'];
-	$res=fetchquery("SELECT * from admins where email='$email';");
-	if($res->num_rows==1)
-	{
-	$_SESSION['userData']['isadmin']=1;
+  $res=fetchquery("SELECT * from admins where email='$email';");
+  if($res->num_rows==1)
+  {
+  $_SESSION['userData']['isadmin']=1;
 
-	}
-	else{
+  }
+  else{
 
-	$_SESSION['userData']['isadmin']=0;
+  $_SESSION['userData']['isadmin']=0;
 
-	}
+  }
 }
 
 
@@ -33,61 +33,65 @@ $user_on_top_level=0;
 $email=$userdata['email'];
 $userid=$userdata['id'];
 $res=fetchquery("SELECT lvlno from leadersboard where id=$userid;");
-$rankvar=fetchquery("SELECT count(*)+1 as rank from leadersboard where lvlno>=(SELECT lvlno from leadersboard where id=$userid) and date < (SELECT date from leadersboard where id=$userid) ");
-if($rankvar!=null)
+$rk123 = fetchquery("SELECT * from leadersboard order by lvlno desc,date asc ;");
+if($rk123!=null)
 {
 
-	if($rankvar->num_rows==1)
-	{
-	
-	$row=$rankvar->fetch_assoc();
-	$rank=$row['rank'];
-	}
+for($i=0;$i<$rk123->num_rows;$i++)
+{
+$r=$rk123->fetch_assoc();
+if($r['id'] == $userid)
+{
+  $rank = $i +1;
+}
+
+}
+
 }
 if($res!=null)
 {
-	if($res->num_rows==1)
-	{
-	$row=$res->fetch_assoc();
-	$lvl=$row['lvlno'];
-	//lvl incremented bcoz it is 0-starting
+  if($res->num_rows==1)
+  {
+  $row=$res->fetch_assoc();
+  $lvl=$row['lvlno'];
+  //lvl incremented bcoz it is 0-starting
 
-	$res=fetchquery("SELECT * from levels where lvlno>'$lvl' and enabled=1 order by lvlno limit 1;");
-	if($res!=null)
-	{
-		if($res->num_rows==1)
-		{ global $hash;
-			$rowlevel=$res->fetch_assoc();
-			
-		$id=$userdata['id'];
-			$hash=crypt($rowlevel['lvlimage'].$id,"saltitbro");
-			$ip=get_ip();
+  $res=fetchquery("SELECT * from levels where lvlno='".($lvl+1)."' and enabled=1 order by lvlno asc limit 1;");
+  if($res!=null)
+  {
+    if($res->num_rows==1)
+    { global $hash;
+      $rowlevel=$res->fetch_assoc();
+      
+    $id=$userdata['id'];
+      $hash=crypt($rowlevel['lvlimage'].$id,"saltitbro");
+      $ip=get_ip();
 
-		$actualimage=$rowlevel['lvlimage'];
-		fetchquery("INSERT into imageaccess values('$hash','$ip',$id,'$actualimage');");
-		
+    $actualimage=$rowlevel['lvlimage'];
+    fetchquery("INSERT into imageaccess values('$hash','$ip',$id,'$actualimage');");
+    
 
-		}
-		else{
-
-
-		$user_on_top_level=1;
+    }
+    else{
 
 
-		}
-
-		}
-		
-		else{
-		
-		echo "nolevel for user";
-		}
+    $user_on_top_level=1;
 
 
-	}
-	
-	
-	
+    }
+
+    }
+    
+    else{
+    
+    echo "nolevel for user";
+    }
+
+
+  }
+  
+  
+  
 
 
 }
@@ -185,7 +189,7 @@ echo 'error:leadersboard access';
 <section class="mbr-section" id="msg-box5-h" style="background-color: rgb(255, 255, 255); padding-top: 25px; padding-bottom: 120px;">
 
     <div class="container" style=" padding-bottom: 70px;"><div class="row">
-        <span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-6 col-xs-11 col-sm-8" style=" font-size: 3rem;
+        <span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-6 col-xs-11 col-sm-8" style=" font-size: 2.7rem;
   font-weight: 600;     font-family: 'Montserrat', sans-serif;
   letter-spacing: -1px; ">Your  Rank is :</span><span class="mbr-section-title col-md-1 text-xs-center col-xs-12 col-sm-2" style="  font-size: 3rem;
   font-weight: 700;     font-family: 'Montserrat', sans-serif; color: #00964d";
@@ -216,16 +220,24 @@ if($user_on_top_level)
 
 
               <div class="mbr-table-cell col-md-5 text-xs-center text-md-left content-size" id= "closestdiv">
-                  <h3 class="mbr-section-title display-2">THINK FOR AN ANSWER</h3>
+                  <h3 class="mbr-section-title display-2" style="font-size: 2rem;">THINK FOR AN ANSWER</h3>
                   <div class="lead">
 <p>
                   <input class ="form-control" type="text" id="anstxt"></input></p>
 
                   </div>
 
-                  <div><button type="button" onclick = "sbmt_answer();"class="btn btn-lg btn-info"> Submit Answer</button></div>
+                  <div><button id="buttonsubmit" type="button" onclick = "sbmt_answer();"class="btn btn-lg btn-info"> Submit Answer</button></div>
               </div>
-
+<script type="text/javascript">
+  document.getElementById("anstxt")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode == 13) {
+        document.getElementById("buttonsubmit").click();
+    }
+});
+</script>
 
               
 
