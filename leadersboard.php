@@ -1,6 +1,6 @@
 <?php
 include 'common/con.php';
-$res=fetchquery("SELECT * from leadersboard order by lvlno desc,date asc ;");
+$res=fetchquery("SELECT * from leadersboard  where id not in (select id from users where email in(select email from admins)) order by lvlno desc,date asc ;");
 ?>
 <?php
 require_once 'fbConfig.php';

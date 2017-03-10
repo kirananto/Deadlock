@@ -1,0 +1,18 @@
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^deadlock.a3k.in[nc]
+RewriteRule ^(.*)$ http://www.deadlock.a3k.in/$1 [r=301,nc]
+
+//Change default directory page
+DirectoryIndex index.php
+
+//Prevent viewing of .htaccess file
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+//Prevent directory listings
+Options All -Indexes
+ 

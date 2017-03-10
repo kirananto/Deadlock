@@ -130,11 +130,11 @@ $lname=$u['last_name'];
 
 <p><?php echo $errmsg; ?></p>
 <table class="table table-hover" padding=10101010101010101010px>
-<tr><td class="userdetails_text">First Name:</td><td><input type="text" class="form-control" name="fname" value="<?php echo $fname;?>"></input></td></tr>
+<tr><td class="userdetails_text">First Name:</td><td><input type="text" class="form-control" name="fname" readonly="readonly" value="<?php echo $fname;?>"></input></td></tr>
 
-<tr><td class="userdetails_text">Last Name:</td><td><input type="text"  class="form-control" name="lname" value="<?php echo $lname;?>"></input></td></tr>
+<tr><td class="userdetails_text">Last Name:</td><td><input type="text"  class="form-control" name="lname"  readonly="readonly" value="<?php echo $lname;?>"></input></td></tr>
 
-<tr><td class="userdetails_text">Email:</td><td><input type="text" class="form-control" name="email" value="<?php echo $email;?>" disabled ></input></td></tr>
+<tr><td class="userdetails_text">Email:</td><td><input type="text" class="form-control" name="email" readonly="readonly" value="<?php echo $email;?>" disabled ></input></td></tr>
 
 <tr><td class="userdetails_text">Mobile No:</td><td><input type="text" class="form-control" name="mobno"></input></td></tr>
   <tr><td><label for="sel1" class="userdetails_text">College:</label></td><td>

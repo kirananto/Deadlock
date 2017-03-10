@@ -28,12 +28,12 @@ $email=$_SESSION['userData']['email'];
 
 
 $hash="";
-$rank="";
+$rank="nil";
 $user_on_top_level=0;
 $email=$userdata['email'];
 $userid=$userdata['id'];
 $res=fetchquery("SELECT lvlno from leadersboard where id=$userid;");
-$rk123 = fetchquery("SELECT * from leadersboard order by lvlno desc,date asc ;");
+$rk123 = fetchquery("SELECT * from leadersboard  where id not in (select id from users where email in(select email from admins)) order by lvlno desc,date asc ;");
 if($rk123!=null)
 {
 
@@ -47,6 +47,8 @@ if($r['id'] == $userid)
 
 }
 
+} else {
+  $rank = "NIL";
 }
 if($res!=null)
 {
@@ -201,7 +203,7 @@ echo 'error:leadersboard access';
 if($user_on_top_level)
 {
 ?>
-    <div class="container" style=" padding-bottom: 70px;"><div class="row">
+    <div class="container" style=" padding-bottom: 70px; display:none; " ><div class="row">
         <span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-6 col-xs-11 col-sm-8" style=" font-size: 2rem;
   font-weight: 600;     font-family: 'Montserrat', sans-serif;
   letter-spacing: -1px; "> More Questions coming soon...</span></div></div>
