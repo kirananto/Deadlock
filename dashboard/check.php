@@ -54,7 +54,7 @@ $lvl++;
 $nextlevelrow=$res->fetch_assoc();
 $nextlevel=$nextlevelrow['lvlno'];
 // changeed: above lines are not needed but not removing no neeed to calculate nextlevel
-fetchquery("UPDATE  leadersboard SET lvlno='$lvl' where id='$id';");
+fetchquery("UPDATE  leadersboard SET lvlno='$lvl',date='$nowdate' where id='$id';");
 	
 	}
 	echo "success";

@@ -86,11 +86,11 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
 </section> 
 <section class="mbr-section-full article mbr-section__container" id="content1-b" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px; ">
 
-    <div class="container col-md-offset-1 col-xs-offset-1">
+    <div class="container col-md-offset-1 ">
         <div class="row">
-            <div class="col-xs-12 col-md-12 ">
+            <div class="col-xs-12 col-md-12 table-responsive">
      
-<table class="table table-hover table-responsive col-xs-12 col-md-12 col-lg-12">
+<table class="table table-hover">
 
 <thead style="color: #00964d;"><tr><th>Rank</th><th>Name</th><th>College</th><th>Level</th></tr></thead><tbody>
 <?php
@@ -101,7 +101,7 @@ for($i=0;$i<$res->num_rows;$i++)
 {
 $r=$res->fetch_assoc();
 
-echo '<tr><th scope = "row">'.(($i)+1).'</th><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.($r['lvlno']) .'</td></tr>';
+echo '<tr><th scope = "row" style="color: #00964d;" >'.(($i)+1).'</th><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.($r['lvlno']) .'</td></tr>';
 if($i == 99) break;
 
 }

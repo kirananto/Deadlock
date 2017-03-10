@@ -142,7 +142,7 @@ if(isset($_POST['submit']))
       }
 
 $_FILES['image']['name']=(string)rand(0,1888).$_FILES['image']['name'];
-     
+     $file_name = $_FILES['image']['name'];
 
       if($lvl != null) {
       if($lvl->num_rows!=0)

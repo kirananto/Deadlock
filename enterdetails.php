@@ -148,7 +148,7 @@ function showfield(name){
 }
 </script>
   <select class="form-control" name ="college" id="sel1" onchange="showfield(this.options[this.selectedIndex].value)">
-    <option value = "Rajagiri School of Engineering and Technology">Rajagiri School of Engineering and Technology</option>
+    <option value = "RSET">RSET</option>
     <option>Others</option>
   </select>
 <div id="div1"></div></td></tr>
