@@ -305,7 +305,6 @@ var alert1 = function(data1) {
 }
 ?>
   
-  <input name="animation" type="hidden">
-   <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
+  
   </body>
 </html>

@@ -30,7 +30,7 @@ if($res!=null)
 	$lvl=$row["lvlno"];
 $lvl++;
 	$stmt=$mysqli->prepare("INSERT into tried values(?,?,?,?,?);");
-	$nowdate=date("Y-m-d H:i:s");
+	$nowdate=gmdate("Y-m-d H:i:s");
 	$ip=get_ip();
 	$stmt->bind_param("isiss",$id,$ansoriginal,$lvl,$nowdate,$ip  );
 	$stmt->execute();

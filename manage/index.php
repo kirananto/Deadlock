@@ -102,7 +102,7 @@ function changelevel(i)
             <div class="col-xs-11 col-md-11 ">
      <?php 
 include '../common/adminpanel.php'; ?>
-<table class="table table-hover col-xs-11 col-md-11">
+<table class="table table-hover table-responsive">
 
 <thead><tr><th>Level Number</th><th>Answer</th><th>Enabled</th><th>Edit</th></tr></thead><tbody>
 <?php
