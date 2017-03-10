@@ -90,7 +90,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
         <div class="row">
             <div class="col-xs-12 col-md-12 ">
      
-<table class="table table-hover table-responsive">
+<table class="table table-hover table-responsive col-xs-12 col-md-12 col-lg-12">
 
 <thead style="color: #00964d;"><tr><th>Rank</th><th>Name</th><th>College</th><th>Level</th></tr></thead><tbody>
 <?php

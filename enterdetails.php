@@ -105,7 +105,7 @@ $lname=$u['last_name'];
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
-                <h3 class="mbr-section-title display-2">COMPLETE REGISTRATION</h3>
+                <h3 class="mbr-section-title display-2" style="font-size: 2rem">COMPLETE REGISTRATION</h3>
                 
             </div>
         </div>
