@@ -12,7 +12,7 @@ if(!$fbUser){
 $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.php">LOG OUT</a>'; 
   //Get user profile data from facebook
   $fbUserProfile = $facebook->api('/me?fields=id,first_name,last_name,email,link,locale,picture');
-  
+  $output = '';
   //Initialize User class
   $user = new User();
   
@@ -207,21 +207,7 @@ $_SESSION['fbUser'] = $fbUser;
   <script src="assets/viewportChecker/jquery.viewportchecker.js"></script>
   <script src="assets/jarallax/jarallax.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  <script type="text/javascript">
-     if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }).catch(function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-  </script>
-  
+    
   <input name="animation" type="hidden">
    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
   </body>
