@@ -102,13 +102,34 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
 if($res!=null)
 {
 
+$flag = 0;
 for($i=0;$i<$res->num_rows;$i++)
 {
-$r=$res->fetch_assoc();
-if($i >= 99) continue;
+  $r=$res->fetch_assoc();
+if($i >= 99) {
+  if($flag == 0 && $r['id']==$userdata['id'] ) {
+    $flag = 1;
+    echo '<tr><th scope = "row" style="color: #00964d;" > .. </th><td> .. </td><td> .. </td><td> .. </td></tr>';
+echo '<tr class="table-success"><th scope = "row" style="color: #00964d;" >'.(($i)+1).'</th><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.($r['lvlno']) .'</td></tr>';
+  }
+  continue;
+}
+
+if($r['id']==$userdata['id']){
+//highlight this
+
+$flag = 1;
+echo '<tr class="table-success"><th scope = "row" style="color: #00964d;" >'.(($i)+1).'</th><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.($r['lvlno']) .'</td></tr>';
+
+
+
+}
+else{
+
+
 echo '<tr><th scope = "row" style="color: #00964d;" >'.(($i)+1).'</th><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.($r['lvlno']) .'</td></tr>';
 
-
+}
 }
 
 }

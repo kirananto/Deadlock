@@ -17,12 +17,21 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
   $user = new User();
   
   //Insert or update user data to the database
-  $fbUserData = array(
+if(!isset($fbUserprofile['email']  ))
+{
+$emailid="no email provided";
+}
+else{
+
+$emailid=$fbUserprofile['email'];
+
+}
+$fbUserData = array(
     'oauth_provider'=> 'facebook',
     'oauth_uid'   => $fbUserProfile['id'],
     'first_name'  => $fbUserProfile['first_name'],
     'last_name'   => $fbUserProfile['last_name'],
-    'email'     => $fbUserProfile['email'],
+    'email'    =>$emailid,
     'gender'    => 'male',//$fbUserProfile['gender'],
     'locale'    => $fbUserProfile['locale'],
     'picture'     => $fbUserProfile['picture']['data']['url'],

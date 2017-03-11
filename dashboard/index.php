@@ -33,6 +33,10 @@ $user_on_top_level=0;
 $email=$userdata['email'];
 $userid=$userdata['id'];
 $res=fetchquery("SELECT lvlno from leadersboard where id=$userid;");
+$countvar=fetchquery("SELECT count(DISTINCT id) as count FROM users");
+$count=$countvar->fetch_assoc();
+$count = $count['count'];
+$count = $count - 4;
 $rk123 = fetchquery("SELECT * from leadersboard  where id not in (select id from users where email in(select email from admins)) order by lvlno desc,date asc ;");
 if($rk123!=null)
 {
@@ -49,6 +53,9 @@ if($r['id'] == $userid)
 
 } else {
   $rank = "NIL";
+}
+if($i == $rank){
+  $rank = $count;
 }
 if($res!=null)
 {
