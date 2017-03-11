@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'common/con.php';
+$errmsg = null;
 if(isset($_GET['e']))
 {
 $i=$_GET['e'];
