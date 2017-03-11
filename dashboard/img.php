@@ -7,9 +7,10 @@ $h=$_GET['img'];
 
 session_start();
 
-
+if(!isset($_SESSION['userData']['images'][$h]))
+{exit;}
 header("Content-type: image/png");
-$stmt = $mysqli->prepare('SELECT * from imageaccess where imagehash=? limit 1');
+/*$stmt = $mysqli->prepare('SELECT * from imageaccess where imagehash=? limit 1');
 $stmt->bind_param("s",$h);
 $stmt->execute();
 $res=$stmt->get_result();
@@ -21,10 +22,12 @@ exit;
 $row=$res->fetch_assoc();
 
 
+*/
+
+$img=$_SESSION['userData']['images'][$h];
 
 
-
-readfile("../levelsmade/".$row['actualimage']);
+readfile("../levelsmade/".$img);
 
 
 

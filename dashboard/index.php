@@ -70,9 +70,9 @@ if($res!=null)
       $ip=get_ip();
 
     $actualimage=$rowlevel['lvlimage'];
-    fetchquery("INSERT into imageaccess values('$hash','$ip',$id,'$actualimage');");
+//    fetchquery("INSERT into imageaccess values('$hash','$ip',$id,'$actualimage');");
     
-
+$_SESSION['userData']['images'][$hash]=$actualimage;
     }
     else{
 
@@ -203,12 +203,15 @@ echo 'error:leadersboard access';
 if($user_on_top_level)
 {
 ?>
-    <div class="container" style=" padding-bottom: 70px; display:none; " ><div class="row">
+    <div class="container" style=" padding-bottom: 70px; " ><div class="row">
         <span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-6 col-xs-11 col-sm-8" style=" font-size: 2rem;
   font-weight: 600;     font-family: 'Montserrat', sans-serif;
   letter-spacing: -1px; "> More Questions coming soon...</span></div></div>
+  <div class="mbr-table-cell mbr-right-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 50%;">
+                  <div class="mbr-figure"><img src="../assets/images/meme1.jpg" class="img-rounded myImg" alt=" Image appears here "></div>
+              </div>
  <?php
-}
+} else {
 ?>
   <div class="container">
         <div class="row">
@@ -246,7 +249,7 @@ if($user_on_top_level)
             </div>
         </div>
     </div>
-
+<?php } ?>
 </section>
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-d" style="background-image: url(/assets/images/footer.jpg); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
@@ -300,21 +303,6 @@ var alert1 = function(data1) {
   <script src="/assets/theme/js/script.js"></script>
   
   <script src="/assets/dist/sweetalert.min.js"></script>
-
-       <?php
-               if($user_on_top_level)
-              {
-                ?>
-              <script type="text/javascript">
-  $(document).ready(function() {
-        $(".myImg").attr('src',"/assets/images/meme1.jpg");
-    });
-   document.getElementById("closestdiv").style.display = 'none';
-   //document.getElementById("myImg").style.max-width = '50%';
-  </script>
-              <?php
-}
-?>
   
   
   </body>

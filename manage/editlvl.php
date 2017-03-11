@@ -36,8 +36,10 @@ if($res!=null)
     $imgurl='/dashboard/img.php?img='.$h;
     $ip=get_ip();
     $actualimage=$row['lvlimage'];
-    fetchquery("INSERT into imageaccess values('$h','$ip',$id,'$actualimage');");
-  }
+//    fetchquery("INSERT into imageaccess values('$h','$ip',$id,'$actualimage');");
+ 
+$_SESSION['userData']['images'][$h]=$actualimage;
+ }
 }
 }
 ?>

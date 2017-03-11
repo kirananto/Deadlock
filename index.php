@@ -1,7 +1,6 @@
 
 <?php
 //Include FB config file && User class
-include 'top-cache.php';
 require_once 'fbConfig.php';
 require_once 'User.php';
 if(!$fbUser){
@@ -12,7 +11,7 @@ if(!$fbUser){
 }else{
 $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.php">LOG OUT</a>'; 
   //Get user profile data from facebook
-  $fbUserProfile = $facebook->api('/me?fields=id,first_name,last_name,email,link,gender,locale,picture');
+  $fbUserProfile = $facebook->api('/me?fields=id,first_name,last_name,email,link,locale,picture');
   
   //Initialize User class
   $user = new User();
@@ -24,7 +23,7 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
     'first_name'  => $fbUserProfile['first_name'],
     'last_name'   => $fbUserProfile['last_name'],
     'email'     => $fbUserProfile['email'],
-    'gender'    => $fbUserProfile['gender'],
+    'gender'    => 'male',//$fbUserProfile['gender'],
     'locale'    => $fbUserProfile['locale'],
     'picture'     => $fbUserProfile['picture']['data']['url'],
     'link'      => $fbUserProfile['link']
@@ -50,7 +49,7 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
   
   */
   if(empty($userData)){
-    $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
+    $output = '<h3 style="color:red">Some problem occurred, please try again.123</h3>';
     
   }
   else{
@@ -227,6 +226,3 @@ $_SESSION['fbUser'] = $fbUser;
    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
   </body>
 </html>
-<?php 
-include 'bottom-cache.php';
-?>

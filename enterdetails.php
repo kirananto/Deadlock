@@ -1,7 +1,6 @@
 <?php
 session_start();
 include 'common/con.php';
-
 if(isset($_GET['e']))
 {
 $i=$_GET['e'];
@@ -27,6 +26,12 @@ $lname=$u['last_name'];
 
 
 ?>
+
+<?php
+function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
+?>  
 
 
 <!DOCTYPE html>
@@ -128,7 +133,7 @@ $lname=$u['last_name'];
            
 <form action="complete.php" method="POST">
 
-<p><?php echo $errmsg; ?></p>
+<p><?php //phpAlert($errmsg); ?></p>
 <table class="table table-hover" padding=10101010101010101010px>
 <tr><td class="userdetails_text">First Name:</td><td><input type="text" class="form-control" name="fname" readonly="readonly" value="<?php echo $fname;?>"></input></td></tr>
 
