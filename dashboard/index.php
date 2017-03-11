@@ -203,12 +203,17 @@ echo 'error:leadersboard access';
 if($user_on_top_level)
 {
 ?>
-    <div class="container" style=" padding-bottom: 70px; " ><div class="row">
+    <div class="container" style=" padding-bottom: 70px; " >
+    <div class="row">
+
+            <div class="mbr-table-md-up">
         <span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-6 col-xs-11 col-sm-8" style=" font-size: 2rem;
   font-weight: 600;     font-family: 'Montserrat', sans-serif;
   letter-spacing: -1px; "> More Questions coming soon...</span></div></div>
-  <div class="mbr-table-cell mbr-right-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 50%;">
-                  <div class="mbr-figure"><img src="../assets/images/meme1.jpg" class="img-rounded myImg" alt=" Image appears here "></div>
+  <br>
+  <div class="mbr-table-cell mbr-right-padding-md-up mbr-valign-top col-md-5 image-size" style="width: 50%;">
+                  <div class="mbr-figure"><img src="../assets/images/meme1.jpg" class="img-rounded" alt=" Image appears here "></div>
+              </div>
               </div>
  <?php
 } else {
