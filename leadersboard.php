@@ -1,6 +1,10 @@
 <?php
 include 'common/con.php';
 $res=fetchquery("SELECT * from leadersboard  where id not in (select id from users where email in(select email from admins)) order by lvlno desc,date asc ;");
+$countvar=fetchquery("SELECT count(DISTINCT id) as count FROM users");
+$count=$countvar->fetch_assoc();
+$count = $count['count'];
+$count = $count - 4;
 ?>
 <?php
 require_once 'fbConfig.php';
@@ -101,13 +105,17 @@ if($res!=null)
 for($i=0;$i<$res->num_rows;$i++)
 {
 $r=$res->fetch_assoc();
-
+if($i >= 99) continue;
 echo '<tr><th scope = "row" style="color: #00964d;" >'.(($i)+1).'</th><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.($r['lvlno']) .'</td></tr>';
-if($i == 99) break;
+
 
 }
 
 }
+
+echo '<tr><th scope = "row" style="color: #00964d;" > .. </th><td> .. </td><td> .. </td><td> .. </td></tr>';
+
+echo '<tr><th scope = "row" style="color: #00964d;" >'.($count).'</th><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.($r['lvlno']) .'</td></tr>';
 
 ?>
 </tbody>
