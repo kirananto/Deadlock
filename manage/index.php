@@ -11,6 +11,11 @@ exit;
 }
 $res=fetchquery("SELECT * from levels order by lvlno");
 
+$countvar=fetchquery("SELECT count(DISTINCT id) as count FROM users");
+$count=$countvar->fetch_assoc();
+$count = $count['count'];
+$count = $count - 4;
+
 ?>
 
 <!DOCTYPE html>
@@ -96,6 +101,13 @@ function changelevel(i)
     </div>
 </section> 
 <section class="mbr-section article mbr-section__container" id="content1-b" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px; ">
+
+<div class="container" style=" padding-bottom: 70px;"><div class="row">
+        <span class="mbr-section-title col-md-offset-1 col-xs-offset-1 col-md-6 col-xs-11 col-sm-8" style=" font-size: 2.7rem;
+  font-weight: 600;     font-family: 'Montserrat', sans-serif;
+  letter-spacing: -1px; ">Total Number of Users :</span><span class="mbr-section-title col-md-1 text-xs-center col-xs-12 col-sm-2" style="  font-size: 3rem;
+  font-weight: 700;     font-family: 'Montserrat', sans-serif; color: #00964d";
+  letter-spacing: -1px;"><?php echo $count; ?></span></div></div>
 
     <div class="container col-md-offset-1 col-xs-offset-1">
         <div class="row">
