@@ -7,7 +7,9 @@ $i=$_GET['e'];
 
 if($i=='1')
 {
-$errmsg="Please Fill the blanks Fields";
+$errmsg="Please Fill the Mobile Number";
+} else if($i == '3') {
+	$errmsg="Please Fill College Name";
 }
 else{
 $errmsg="Invalid Mobile NO";
@@ -29,7 +31,9 @@ $lname=$u['last_name'];
 
 <?php
 function phpAlert($msg) {
+	if($msg != null) {
     echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
 }
 ?>  
 
@@ -133,7 +137,7 @@ function phpAlert($msg) {
            
 <form action="complete.php" method="POST">
 
-<p><?php //phpAlert($errmsg); ?></p>
+<p><?php phpAlert($errmsg); ?></p>
 <table class="table table-hover" padding=10101010101010101010px>
 <tr><td class="userdetails_text">First Name:</td><td><input type="text" class="form-control" name="fname" readonly="readonly" value="<?php echo $fname;?>"></input></td></tr>
 

@@ -30,6 +30,14 @@ if(empty($mobno)) // phone number is not empty
 header("Location:enterdetails.php?e=1");
 exit;
 }
+
+if(empty($college)) // phone number is not empty
+{
+
+header("Location:enterdetails.php?e=3");
+exit;
+}
+
 if(!preg_match('/^\d{10}$/',$mobno)){
 
 
