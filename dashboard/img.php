@@ -35,7 +35,7 @@ readfile("../levelsmade/".$img);
 
 
 
-$stmt->close();
+//$stmt->close();
 
 
 
