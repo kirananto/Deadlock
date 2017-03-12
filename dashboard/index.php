@@ -8,6 +8,15 @@ if($userdata['activated']==0)
 header("Location:/");
 exit;
 }
+/*
+if($userdata['email']==''||$userdata['email']=='no email provided'||$userdata['phoneno']==''||$userdata['college']=='')
+{
+header("Location:/MoreDetails.php");
+exit;
+
+}
+
+*/
 if(!isset($userdata['isadmin']))
 {
 $email=$_SESSION['userData']['email'];

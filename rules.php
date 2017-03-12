@@ -3,8 +3,14 @@
 require_once 'fbConfig.php';
 require_once 'User.php';
  $fbUser = $_SESSION['fbUser'];
+if(isset($_SESSION['userData']))
+{
 $userdata=$_SESSION['userData'];
- if(!$fbUser){
+}
+else{
+$userdata=NULL;
+} 
+if(!$fbUser){
   $fbUser = NULL;
   $loginURL = $facebook->getLoginUrl(array('redirect_uri'=>$redirectURL,'scope'=>$fbPermissions));
   $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="'.$loginURL.'">LOGIN</a>'; 
@@ -69,7 +75,7 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item"><?php if(1||$_SESSION['userData']['isadmin']==0)
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item"><?php if(isset($_SESSION['userData'])&&$_SESSION['userData']['isadmin']==0)
 { echo $play; } ?></li><?php if(0&&$_SESSION['userData']['isadmin']){?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="/manage/index.php">GO TO ADMIN PANEL</a></li><?php }?><li class="nav-item nav-btn"><?php echo $logintop; ?></li><li class="nav-item dropdown"><div class="avatar hidden-md-down" style="background-image: url(&quot;<?php echo $userdata['picture'] ?>&quot;);"></div></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>

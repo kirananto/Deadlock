@@ -9,8 +9,21 @@ $count = $count - 4;
 <?php
 require_once 'fbConfig.php';
 require_once 'User.php';
+if(isset($_SESSION['fbUser']))
+{
  $fbUser = $_SESSION['fbUser']; 
+}
+else{
+$fbUser=0;
+}
+if(!isset($_SESSION['userData']))
+{
+
+$userdata=0;
+}
+else{
 $userdata=$_SESSION['userData'];
+}
  if(!$fbUser){
   $fbUser = NULL;
   $loginURL = $facebook->getLoginUrl(array('redirect_uri'=>$redirectURL,'scope'=>$fbPermissions));
@@ -70,7 +83,8 @@ $play = '<a class="nav-link link" href="dashboard/index.php">PLAY</a>';
                     <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="hamburger-icon"></div>
                     </button>
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item"><?php  if($_SESSION['userData']['isadmin']==0) {echo $play; }?></li><?php if($_SESSION['userData']['isadmin']){?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="/manage/index.php">GO TO ADMIN PANEL</a></li><?php }?><li class="nav-item nav-btn"><?php echo $logintop; ?></li><li class="nav-item dropdown"><div class="avatar hidden-md-down" style="background-image: url(&quot;<?php echo $userdata['picture'] ?>&quot;);"></div></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="rules.php">RULES</a></li><li class="nav-item dropdown"><a class="nav-link link" href="leadersboard.php" aria-expanded="false">LEADERBOARD</a></li><li class="nav-item dropdown"><a class="nav-link link" href="https://a3k.in/" aria-expanded="false" target="_blank">A3K</a></li><li class="nav-item">
+<?php  if(isset($_SESSION['userData'])&&$_SESSION['userData']['isadmin']==0) {echo $play; }?></li><?php if(0&&$_SESSION['userData']['isadmin']){?><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="/manage/index.php">GO TO ADMIN PANEL</a></li><?php }?><li class="nav-item nav-btn"><?php echo $logintop; ?></li><li class="nav-item dropdown"><div class="avatar hidden-md-down" style="background-image: url(&quot;<?php echo $userdata['picture'] ?>&quot;);"></div></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
@@ -107,7 +121,7 @@ for($i=0;$i<$res->num_rows;$i++)
 {
   $r=$res->fetch_assoc();
 if($i >= 99) {
-  if($flag == 0 && $r['id']==$userdata['id'] ) {
+  if($flag == 0 &&$userdata!=0&& $r['id']==$userdata['id'] ) {
     $flag = 1;
     echo '<tr><th scope = "row" style="color: #00964d;" > .. </th><td> .. </td><td> .. </td><td> .. </td></tr>';
 echo '<tr class="table-success"><th scope = "row" style="color: #00964d;" >'.(($i)+1).'</th><td>'.$r['Name'].'</td><td>'.$r['college'].'</td><td>'.($r['lvlno']) .'</td></tr>';
@@ -115,7 +129,7 @@ echo '<tr class="table-success"><th scope = "row" style="color: #00964d;" >'.(($
   continue;
 }
 
-if($r['id']==$userdata['id']){
+if($userdata!=0&&$r['id']==$userdata['id']){
 //highlight this
 
 $flag = 1;

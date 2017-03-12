@@ -17,13 +17,13 @@ $logintop = '<a class="nav-link btn btn-white btn-white-outline" href="logout.ph
   $user = new User();
   
   //Insert or update user data to the database
-if(!isset($fbUserprofile['email']  ))
+if(!isset($fbUserProfile['email']  ))
 {
-$emailid="no email provided";
+$emailid="";
 }
 else{
 
-$emailid=$fbUserprofile['email'];
+$emailid=$fbUserProfile['email'];
 
 }
 $fbUserData = array(
@@ -67,6 +67,13 @@ $fbUserData = array(
   
   header("Location:enterdetails.php?");
   }
+/*
+else if ($userData['email']==''||$userData['email']=='no email provided'||$userData['phoneno']==''||$userData['college']=='')
+{
+
+header("Location:MoreDetails.php");
+}
+*/
   else{
     
   /*  if($_SESSION['userData']['isadmin']==0){

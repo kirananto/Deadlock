@@ -1,16 +1,39 @@
 <?php
 session_start();
 include 'common/con.php';
+include 'common/auth.php';
 $errmsg = null;
+
+$u=$_SESSION['userData'];
+$email=$u['email'];
+$fname=$u['first_name'];
+$lname=$u['last_name'];
+$mobno=$u['phoneno'];
+
+
+
+if(!($email==''||$email=='no email provided' ||$mobno==''))
+{
+
+header("Location:/");
+exit;
+
+}
 if(isset($_GET['e']))
 {
 $i=$_GET['e'];
 
 if($i=='1')
 {
-$errmsg="Please Fill the Mobile Number";
+$errmsg="Please Fill the Mobile Number,Email ID";
 } else if($i == '3') {
 	$errmsg="Please Fill College Name";
+}
+else if($i==4)
+{
+
+$errmsg="Invalid Email ID";
+
 }
 else{
 $errmsg="Invalid Mobile NO";
@@ -18,16 +41,6 @@ $errmsg="Invalid Mobile NO";
 
 }
 }
-if(!isset($_SESSION['userData'])||$_SESSION['userData']['activated']==1)
-{header("Location:/");}
-
-$u=$_SESSION['userData'];
-$email=$u['email'];
-$fname=$u['first_name'];
-$lname=$u['last_name'];
-
-
-
 ?>
 
 <?php
@@ -113,9 +126,11 @@ function phpAlert($msg) {
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(34, 34, 34);">
     </div>
     <div class="container">
-        <div class="row">
+       <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
                 <h3 class="mbr-section-title display-2" style="font-size: 2rem">COMPLETE REGISTRATION</h3>
+
+                <div class="lead"><p> Your Profile is Incomplete . Please Complete Missing Information.. </p></div>
                 
             </div>
         </div>
@@ -136,7 +151,7 @@ function phpAlert($msg) {
            
            
            
-<form action="complete.php" method="POST">
+<form action="completeremain.php" method="POST">
 
 <p><?php phpAlert($errmsg); ?></p>
 <table class="table table-hover" padding=10101010101010101010px>
@@ -144,9 +159,9 @@ function phpAlert($msg) {
 
 <tr><td class="userdetails_text">Last Name:</td><td><input type="text"  class="form-control" name="lname"  readonly="readonly" value="<?php echo $lname;?>"></input></td></tr>
 
-<tr><td class="userdetails_text">Email:</td><td><input type="text" class="form-control" name="email" readonly="readonly" value="<?php echo $email;?>" ></input></td></tr>
+<tr><td class="userdetails_text">Email:</td><td><input type="text" class="form-control" name="email"  value="<?php echo $email;?>" ></input></td></tr>
 
-<tr><td class="userdetails_text">Mobile No:</td><td><input type="text" class="form-control" name="mobno"></input></td></tr>
+<tr><td class="userdetails_text">Mobile No:</td><td><input type="text" class="form-control" name="mobno" value="<?php echo $mobno; ?>"></input></td></tr>
   <tr><td><label for="sel1" class="userdetails_text">College:</label></td><td>
  <script type="text/javascript">
 function showfield(name){
