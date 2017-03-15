@@ -6,14 +6,14 @@ if(!isset($_POST['mobno']))
 header("Location:/");
 exit;
 }
-/*if(!isset($_SESSION['userData']))
+if(!isset($_SESSION['userData']))
 {
 
 header("Location:/");
 exit;
 }
 if($_SESSION['userData']['activated']==1)
-{header("Location:/");exit;}*/
+{header("Location:/");exit;}
 
 $mobno=$_POST['mobno'];
 $lastname=$_POST['lname'];
@@ -46,9 +46,14 @@ header("Location:enterdetails.php?e=2");
 exit;
 }
 
-/*echo "UPDATE users set college='".$college."',phoneno=".$mobno.",last_name='".$lastname."',activated=1,first_name='".$fname."' where email='".$email."';";
+/*$college=mysql_real_escape_string($college);
+$mobno = mysql_real_escape_string($mobno);
+$lastname=mysql_real_escape_string($lastname);
+$fname = mysql_real_escape_string($fname); 
+$email = mysql_real_escape_string($email); 
+echo "UPDATE users set college='".$college."',phoneno=".$mobno.",last_name='".$lastname."',activated=1,first_name='".$fname."' where email='".$email."';";
 exit;*/
-$res=fetchquery("UPDATE users set college='".$college."',email='".$email."',phoneno=".$mobno.",last_name='".$lastname."',activated=1,first_name='".$fname."' where id='".$id."';");
+$res=fetchquery("UPDATE users set college='".$college."',phoneno=".$mobno.",last_name='".$lastname."',activated=1,first_name='".$fname."' where email='".$email."';");
 
 $res1=null;
 if($res==null)

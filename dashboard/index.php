@@ -37,7 +37,7 @@ $email=$_SESSION['userData']['email'];
 
 
 $hash="";
-$rank="nil";
+$rank="God Mode";
 $user_on_top_level=0;
 $email=$userdata['email'];
 $userid=$userdata['id'];
@@ -61,7 +61,7 @@ if($r['id'] == $userid)
 }
 
 } else {
-  $rank = "NIL";
+  $rank = "God Mode";
 }
 if($i == $rank){
   $rank = $count;
