@@ -1,6 +1,31 @@
 <?php
 
 session_start();
+include 'common/con.php';
+$userdata=$_SESSION['userData'];
+$id1 = $userdata['id'];
+if($userdata != null)
+{
+
+$rk123 = fetchquery("SELECT * from leadersboard  where id='$id1'; ");
+if($rk123!=null)
+  {
+    if($rk123->num_rows==1)
+    { 
+
+      $rowlevel=$rk123->fetch_assoc();
+      $levelno=$rowlevel['lvlno'];
+      if($levelno < 20 )
+      {
+         header("Location:/?redir=na");
+         exit;
+      }
+  }
+}
+} else {
+  header("Location:/?redir=na");
+         exit;
+}
 if(isset($_POST['submit']))
 {
       $decrypted_val = $_POST['fname'];
@@ -190,7 +215,7 @@ echo "<p class = 'display-4'>Encrypted Text : " . $e1 . "</p>";
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-d" style="background-image: url(/assets/images/footer.jpg); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
     <div class="container">
-        <p class="text-xs-center">Copyright (c) 2017 Deadlock.</p>
+        <p class="text-xs-center">Copyright (c) 2017 Razorsharp.</p>
     </div>
 </footer>
 

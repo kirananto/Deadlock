@@ -1,5 +1,29 @@
 <?php
 session_start();
+include 'common/con.php';
+$userdata=$_SESSION['userData'];
+$id1 = $userdata['id'];
+if($userdata != null)
+{
+
+$rk123 = fetchquery("SELECT * from leadersboard  where id='$id1'; ");
+if($rk123!=null)
+  {
+    if($rk123->num_rows==1)
+    { 
+
+      $rowlevel=$rk123->fetch_assoc();
+      $levelno=$rowlevel['lvlno'];
+      if($levelno < 20 )
+      {
+         header("Location:/?redir=na");
+      }
+  }
+}
+} else {
+  header("Location:/?redir=na");
+         exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,10 +101,12 @@ session_start();
         <div class="row">
             <div class="col-xs-12 col-md-12 text-xs-center">
 
- <h4 class = "display-4"> Decrypt This.. !!!! </h4>
+ <h4 class = "display-4" style = "color: #00964d;"> Decrypt This.. !!!! </h4>
                 <br>
                 <h4 class = "display-4"> ihocmrafnieimuiorsannprthcgaymitstcagiohhs </h4>
 
+
+                <a class="btn btn-primary btn-lg col-md-offset-2 col-md-8" href="/index.php"> Click to Enter Answer</a>
             </div>
         </div>
     </div>
@@ -88,7 +114,7 @@ session_start();
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-d" style="background-image: url(/assets/images/footer.jpg); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
     <div class="container">
-        <p class="text-xs-center">Copyright (c) 2017 Deadlock.</p>
+        <p class="text-xs-center">Copyright (c) 2017 Razorsharp.</p>
     </div>
 </footer>
 

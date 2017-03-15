@@ -163,7 +163,7 @@ echo '<tr><th scope = "row" style="color: #00964d;" >'.($count).'</th><td>'.$r['
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-d" style="background-image: url(/assets/images/footer.jpg); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
     <div class="container">
-        <p class="text-xs-center">Copyright (c) 2017 Deadlock.</p>
+        <p class="text-xs-center">Copyright (c) 2017 Razorsharp.</p>
     </div>
 </footer>
 

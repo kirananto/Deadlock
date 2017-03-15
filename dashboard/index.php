@@ -275,7 +275,7 @@ if($user_on_top_level)
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-d" style="background-image: url(/assets/images/footer.jpg); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
     <div class="container">
-        <p class="text-xs-center">Copyright (c) 2017 Deadlock.</p>
+        <p class="text-xs-center">Copyright (c) 2017 Razorsharp.</p>
     </div>
 </footer>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
